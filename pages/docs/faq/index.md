@@ -12,7 +12,8 @@ title: FAQ
 * [Install Native Addons with Node.js v4](#install-native-addons-with-nodejs-v4)
 * [Install Serialport on OS X El Capitan](#install-serialport-on-os-x-el-capitan)
 * [Kernel panic issue on macOS Sierra for devices using the CH340G, CH34G or CH34X chipset](#kernel-panic-issue-on-macos-sierra-for-devices-using-the-ch340g-ch34g-or-ch34x-chipset)
-
+* [Running without using Arduino board](#running-without-using-arduino-board)
+ 
 ---
 
 ## How can I enable WebGL in my browser?
@@ -275,3 +276,40 @@ sudo ln -s ../../lib/libSystem.B.dylib libgcc_s.10.5.dylib
 ## Kernel panic issue on macOS Sierra for devices using the CH340G, CH34G or CH34X chipset
 
 Download and install the latest driver from https://github.com/adrianmihalko/ch340g-ch34g-ch34x-mac-os-x-driver.
+
+---
+
+## Running without using Arduino board
+
+Before you can get started, you will need an Arduino UNO/Nano board based on the ATmega328P. Download the latest Grbl firmware from the [Grbl  repository](https://github.com/grbl/grbl), and [flash Grbl to an Arduino](https://github.com/grbl/grbl/wiki/Flashing-Grbl-to-an-Arduino).
+
+If you don't have an Arduino, check out [grbl-sim](https://github.com/grbl/grbl-sim) and follow the instructions below to compile Grbl into an executable for your computer:
+
+1. Clone this repository into the directory containing the Grbl source code (i.e. `<repo>/grbl/`), like so:
+
+  ```bash
+  $ git clone git@github.com:grbl/grbl.git
+  $ cd grbl/grbl
+  $ git clone git@github.com:grbl/grbl-sim.git
+  $ cd grbl-sim
+  ```
+2. Edit the Grbl-sim Makefile to select the correct `PLATFORM =` line.
+3. Run `make new` to compile the Grbl sim. It will create an executable file named `grbl_sim.exe`. See below:
+
+  ![grbl-sim](https://raw.githubusercontent.com/cncjs/cncjs/master/media/grbl-sim.png).
+4. On Linux, run the updated version of [simport.sh](https://github.com/cncjs/cncjs/blob/master/examples/grbl-sim/simport.sh) (`examples/grbl-sim/simport.sh`) to create a fake serial port (`/dev/ttyFAKE`), and use it to test your Grbl interface software.
+5. Copy [.cncrc](https://github.com/cncjs/cncjs/blob/master/examples/.cncrc) from [examples](https://github.com/cncjs/cncjs/tree/master/examples) to the home directory, and run `cnc -c ~/.cncrc` to start the server. The configuration file should look like below:
+
+  ```json
+  {
+      "ports": [
+          {
+              "comName": "/dev/ttyFAKE",
+              "manufacturer": "grbl-sim"
+          }
+      ]
+  }
+  ```
+6. Open `/dev/ttyFAKE` from the Connection widget to interact with the Grbl simulator as if connected to an Arduino with Grbl.
+
+  ![ttyFAKE](https://raw.githubusercontent.com/cncjs/cncjs/master/media/ttyFAKE.png)
