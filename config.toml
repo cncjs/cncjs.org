@@ -1,0 +1,13 @@
+siteTitle = "cncjs"
+baseColor = "#222"
+linkPrefix = ""
+docPages = [
+    "/docs/",
+    "/docs/installation/",
+    "/docs/rpi-setup-guide/",
+    "/docs/desktop-app/",
+    "/docs/user-guide/",
+    "/docs/faq/",
+    "/docs/resources/",
+    "/docs/about/"
+]
