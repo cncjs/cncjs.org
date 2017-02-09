@@ -3,6 +3,19 @@
   "description": "cncjs.org site",
   "version": "0.0.0",
   "author": "Cheton Wu <cheton@gmail.com>",
+  "keywords": [
+    "cncjs",
+    "cncjs.org",
+    "gatsby"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "gatsby develop",
+    "build": "gatsby build",
+    "deploy": "gatsby build --prefix-links && gh-pages -d public"
+  },
   "dependencies": {
     "chroma-js": "^0.7.2",
     "classnames": "^2.2.5",
@@ -21,17 +34,7 @@
     "typography-plugin-code": "^0.15.0",
     "underscore.string": "^3.2.2"
   },
-  "keywords": [
-    "cncjs",
-    "cncjs.org",
-    "gatsby"
-  ],
-  "license": "MIT",
-  "main": "n/a",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "gatsby develop",
-    "build": "gatsby build",
-    "deploy": "gatsby build --prefix-links; rm -rf docs/; mkdir docs/; cp -af public/* docs/"
+  "devDependencies": {
+    "gh-pages": "^0.12.0"
   }
 }

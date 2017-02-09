@@ -12,7 +12,7 @@ title: FAQ
 * [Install Native Addons with Node.js v4](#install-native-addons-with-nodejs-v4)
 * [Install Serialport on OS X El Capitan](#install-serialport-on-os-x-el-capitan)
 * [Kernel panic issue on macOS Sierra for devices using the CH340G, CH34G or CH34X chipset](#kernel-panic-issue-on-macos-sierra-for-devices-using-the-ch340g-ch34g-or-ch34x-chipset)
-* [Running without using Arduino board](#running-without-using-arduino-board)
+* [Run cncjs without Arduino board](#run-cncjs-without-arduino-board)
  
 ---
 
@@ -279,7 +279,7 @@ Download and install the latest driver from https://github.com/adrianmihalko/ch3
 
 ---
 
-## Running without using Arduino board
+## Run cncjs without Arduino board
 
 Before you can get started, you will need an Arduino UNO/Nano board based on the ATmega328P. Download the latest Grbl firmware from the [Grbl  repository](https://github.com/grbl/grbl), and [flash Grbl to an Arduino](https://github.com/grbl/grbl/wiki/Flashing-Grbl-to-an-Arduino).
 
