@@ -1,5 +1,7 @@
 ---
 title: Raspberry Pi Setup Guide
+contributors:
+  - AustinSaintAubin
 ---
 
 We recommend that you use a [Raspberry Pi 3](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) or [Raspberry Pi 2](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) because of the performance requirements of the Node.js application. If you a buying a raspberry pi, [buy a Raspberry Pi 3](https://www.amazon.com/Raspberry-Pi-RASP-PI-3-Model-Motherboard/dp/B01CD5VC92) or latest model.
