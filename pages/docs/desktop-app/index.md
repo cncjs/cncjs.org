@@ -1,5 +1,7 @@
 ---
 title: Desktop App
+contributors:
+  - cheton
 ---
 
 Visit https://github.com/cncjs/cncjs/releases to find the latest releases.

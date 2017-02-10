@@ -1,0 +1,36 @@
+.contributors {
+}
+
+.contributors__list {
+    padding: 6px;
+}
+
+.contributor {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 1em;
+    font-size: 14px;
+}
+
+.contributor img {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .3);
+}
+
+.contributor .contributor__name {
+    color: #465E69;
+    margin-top: -6px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .3);
+    line-height: 1.4;
+    transition: color .1s;
+    padding: 0 6px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, .95);
+}
+
+.contributor:hover .contributor__name {
+    color: #2086d7;
+}

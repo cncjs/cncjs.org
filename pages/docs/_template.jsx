@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import Breakpoint from 'components/Breakpoint';
+import Contributors from 'components/Contributors';
 import find from 'lodash/find';
 import { prefixLink } from 'gatsby-helpers';
 import { config } from '../../config';
@@ -23,11 +24,15 @@ module.exports = React.createClass({
     render() {
         const childPages = config.docPages.map((p) => {
             const page = find(this.props.route.pages, (_p) => _p.path === p);
+            const active = prefixLink(page.path) === this.props.location.pathname;
             return {
-                title: page.data.title,
                 path: page.path,
+                active: active,
+                title: page.data.title,
+                contributors: page.data.contributors || []
             };
         });
+        const activePage = find(childPages, { active: true });
         const docOptions = childPages.map((child) =>
             <option
                 key={prefixLink(child.path)}
@@ -86,6 +91,13 @@ module.exports = React.createClass({
                         }}
                     >
                         {this.props.children}
+                        {activePage.contributors.length > 0 &&
+                            <div>
+                                <hr />
+                                <h3>Contributors</h3>
+                                <Contributors contributors={activePage.contributors} />
+                            </div>
+                        }
                     </div>
                 </Breakpoint>
                 <Breakpoint>

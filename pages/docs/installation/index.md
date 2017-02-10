@@ -1,5 +1,7 @@
 ---
 title: Installation
+contributors:
+  - cheton
 ---
 
 ## index

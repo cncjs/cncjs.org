@@ -23,7 +23,6 @@ module.exports = React.createClass({
     render() {
         const docsActive = includes(this.props.location.pathname, '/docs/');
         const projectsActive = includes(this.props.location.pathname, '/projects/');
-        const url = 'https://github.com/cncjs/cncjs';
 
         return (
             <div>

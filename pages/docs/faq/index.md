@@ -1,5 +1,7 @@
 ---
 title: FAQ
+contributors:
+  - cheton
 ---
 
 ## Index

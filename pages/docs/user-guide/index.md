@@ -1,5 +1,7 @@
 ---
 title: User Guide
+contributors:
+  - cheton
 ---
 
 ## index

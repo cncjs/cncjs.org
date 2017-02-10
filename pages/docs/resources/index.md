@@ -1,5 +1,7 @@
 ---
 title: Resources
+contributors:
+  - cheton
 ---
 
 #### Calculator
