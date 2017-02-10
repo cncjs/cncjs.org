@@ -4,7 +4,7 @@ title: About
 
 I initiated this project in 2015, the goal was to work together with both hardware and software engineering, including JavaScript development, woodworking and electronics, and give a great talk for JavaScript Developers Conference (JSDC) in Taiwan.
 
-It took me about 3 months to build a three axis CNC machine from scratch, and another 1 month to create the first CNC web interface in React with 10+ languages. This project is in active development after the talk, and continuously received many useful feedbacks from people all around the world.
+It took me about 3 months to build a three axis CNC machine from scratch, and another 1 month to create the first CNC web interface in React. This project is now available with 10+ languages, and continuously received many useful feedbacks from people all around the world.
 
 Feel free to [contact me](https://github.com/cheton) if you would like to join the development of [cncjs](https://github.com/cncjs/cncjs). Feedback is always welcome. If you'd like to contribute have a look at the [developer guide](https://github.com/cncjs/cncjs/blob/master/CONTRIBUTING.md), and please don't hesitate to give us a holler if you have any issues or questions.
 
