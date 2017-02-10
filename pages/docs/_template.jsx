@@ -1,12 +1,12 @@
-import React from 'react'
-import { Link } from 'react-router'
-import Breakpoint from 'components/Breakpoint'
-import find from 'lodash/find'
-import { prefixLink } from 'gatsby-helpers'
-import { config } from 'config'
+import React from 'react';
+import { Link } from 'react-router';
+import Breakpoint from 'components/Breakpoint';
+import find from 'lodash/find';
+import { prefixLink } from 'gatsby-helpers';
+import { config } from '../../config';
+import typography from '../../utils/typography';
 
-import typography from 'utils/typography'
-const { rhythm } = typography
+const { rhythm } = typography;
 
 module.exports = React.createClass({
     propTypes () {

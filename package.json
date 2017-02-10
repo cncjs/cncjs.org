@@ -29,6 +29,7 @@
     "markdown-it-footnote": "^3.0.1",
     "markdown-it-sub": "^1.0.0",
     "react-document-title": "^2.0.1",
+    "react-github-button": "^0.1.10",
     "react-typography": "^0.15.0",
     "typography": "^0.15.0",
     "typography-plugin-code": "^0.15.0",

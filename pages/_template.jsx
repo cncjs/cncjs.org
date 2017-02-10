@@ -6,8 +6,10 @@ import includes from 'underscore.string/include';
 import { colors, activeColors } from '../utils/colors';
 import typography from '../utils/typography';
 import { config } from '../config';
+import GitHubButton from 'react-github-button';
 
 // Import styles.
+import 'react-github-button/assets/style.css';
 import 'css/main.css';
 import 'css/github.css';
 
@@ -78,11 +80,13 @@ module.exports = React.createClass({
                                         Projects
                                     </Link>
                                 </li>
-                                <li>
-                                    <a href="https://github.com/cncjs/cncjs">
-                                        <i className="fa fa-fw fa-github" style={{ fontSize: 16, marginRight: 5 }} />
-                                        GitHub
-                                    </a>
+                                <li style={{ padding: '15px 0' }}>
+                                    <GitHubButton
+                                        type="stargazers"
+                                        size="default"
+                                        namespace="cncjs"
+                                        repo="cncjs"
+                                    />
                                 </li>
                             </ul>
                         </div>
