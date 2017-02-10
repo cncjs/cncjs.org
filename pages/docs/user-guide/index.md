@@ -2,84 +2,89 @@
 title: User Guide
 ---
 
-## Account Management
-![image](https://cloud.githubusercontent.com/assets/447801/20375707/d036adbe-acbb-11e6-8b3f-514c06e7c9e4.png)
+## index
 
-## Widget Management
+* [Workspace](#workspace)
+  - [Widgets](#widgets)
+* [Settings](#settings)
+  - [General](#general)
+  - [Account](#account)
+* [Keyboard Shortcuts](#keyboard-shortcuts)
+* [Contour ShuttleXpress](#contour-shuttlexpress)
+
+---
+
+## Workspace
+
+### Widgets
+
 ![](https://raw.githubusercontent.com/cncjs/cncjs/master/media/widgets.png)
 
 #### Visualizer Widget
+
 This widget visualizes a G-code file and simulates the tool path.
 
-![](https://raw.githubusercontent.com/cncjs/cncjs/master/media/widgets/visualizer.png)
-#### Axes Widget
-This widget shows the XYZ position. It includes jog controls, homing, and axis zeroing.
-
-![](https://raw.githubusercontent.com/cncjs/cncjs/master/media/widgets/axes.png)
-
 #### Connection Widget
+
 This widget lets you establish a connection to a serial port.
 
-![](https://raw.githubusercontent.com/cncjs/cncjs/master/media/widgets/connection.png)
+#### Axes Widget
+
+This widget shows the XYZ position. It includes jog controls, homing, and axis zeroing.
 
 #### Console Widget
+
 This widget lets you read and write data to the CNC controller connected to a serial port.
 
-![](https://raw.githubusercontent.com/cncjs/cncjs/master/media/widgets/console.png)
-
 #### G-code Widget
+
 This widgets shows the current status of G-code commands.
 
-![](https://raw.githubusercontent.com/cncjs/cncjs/master/media/widgets/gcode.png)
-
 #### Grbl Widget
-This widet shows the Grbl state and provides Grbl specific features.
 
-![](https://raw.githubusercontent.com/cncjs/cncjs/master/media/widgets/grbl.png)
+This widet shows the Grbl state and provides Grbl specific features.
 
 Set `$10=2` for Grbl v1.1d (or `$10=15` for Grbl v0.9) to see planner buffer and receive buffer in queue reports.
 
 ![](https://cloud.githubusercontent.com/assets/447801/20649442/5912660e-b4fb-11e6-8ff8-60b2602f5d79.png)
 
+#### Smoothie Widget
+
+This widget shows the Smoothie state and provides Smoothie specific features.
+
+#### TinyG widget
+
+This widget shows the TinyG state and provides TinyG specific features.
+
+#### Laser Widget
+
+This widget allows you control laser intensity and turn the laser on/off.
+
 #### Probe Widget
+
 This widget helps you use a touch plate to set your Z zero offset.
 
-![](https://raw.githubusercontent.com/cncjs/cncjs/master/media/widgets/probe.png)
-
 #### Spindle Widget
+
 This widget provides the spindle control.
 
-![](https://raw.githubusercontent.com/cncjs/cncjs/master/media/widgets/spindle.png)
-
 #### Webcam Widget
+
 This widget lets you monitor a webcam.
 
-![](https://raw.githubusercontent.com/cncjs/cncjs/master/media/widgets/webcam.png)
+Checkout [FAQ](https://cnc.js.org/docs/faq/) to learn how to setup and configure webcam streaming with Raspberry Pi.
 
-Checkout [FAQ](https://github.com/cncjs/cncjs/wiki/FAQ) to learn how to setup and configure webcam streaming with Raspberry Pi.
+---
 
-## TinyWeb Console for 320x240 LCD Display
+## Settings
 
-For users who want the jog function on a small 320x240 LCD display, use the mount option to set a mount point to serve static files. For example:
-```
-$ cnc -h
-  Usage: cnc [options]
-  Options:
-    -m, --mount [<url>:]<absolute-path>  set the mount point for serving static files (default: /static:static)
-```
+### General
 
-First, download the latest "tinyweb.zip" file from https://github.com/cncjs/cncjs/releases and save it to your Raspberry Pi to serve as static files. Let's assume you extract the zip file within the `/home` directory, you will see the a `tinyweb` directory under `/home` after extraction.
+### Account
 
-Then, run cnc with the `-m` option, like below:
-```
-$ cnc -m /pendant:/home/tinyweb
-```
+![image](https://cloud.githubusercontent.com/assets/447801/20375707/d036adbe-acbb-11e6-8b3f-514c06e7c9e4.png)
 
-After that, you should be able to see the tinyweb console as shown below at `http://localhost:8000/pendant/`.
-
-![tinyweb-axes.png](https://raw.githubusercontent.com/cncjs/cncjs/master/media/tinyweb-axes.png)
-
-It should fit perfectly with your 320x240 LCD display.
+---
 
 ## Keyboard Shortcuts
 These are the current keys used in the cnc (from v0.15.3).<br>
@@ -109,6 +114,8 @@ These are the current keys used in the cnc (from v0.15.3).<br>
 <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>command</kbd> + <kbd>5</kbd> - Shuttle Forward (Fast)<br>
 <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>command</kbd> + <kbd>6</kbd> - Shuttle Forward (Faster)<br>
 <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>command</kbd> + <kbd>7</kbd> - Shuttle Forward (Fastest)<br>
+
+---
 
 ## Contour ShuttleXpress
 You can use the ShuttleXpress jog dial to work with a CNC controller. The ShuttleXpress has five programmable buttons, a 10 counts jog dial (the inner wheel), and a 15-position shuttle wheel (the outer wheel) that returns to center when released.
