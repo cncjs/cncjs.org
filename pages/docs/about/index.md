@@ -1,5 +1,7 @@
 ---
 title: About
+contributors:
+  - cheton
 ---
 
 I initiated this project in 2015, the goal was to work together with both hardware and software engineering, including JavaScript development, woodworking and electronics, and give a great talk for JavaScript Developers Conference (JSDC) in Taiwan.
