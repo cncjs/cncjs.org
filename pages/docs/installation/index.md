@@ -2,10 +2,20 @@
 title: Installation
 ---
 
-### [Raspberry Pi Setup Guide](../rpi-setup-guide/)
-We have a dedicated setup guide for setting up Node.js, NVM, CNC.js, Autostart with pm2, all tested on the Raspberry Pi. Just use the link above in the title to get to the separate article.
+## index
 
---------------------
+* [Raspberry Pi Setup Guide](#raspberry-pi-setup-guide)
+* [Node.js Installation](#nodejs-installation)
+* [Git Installation](#git-installation)
+* [Docker Images](#docker-images)
+
+---
+
+### Raspberry Pi Setup Guide
+
+We have a dedicated setup guide for setting up Node.js, NVM, CNC.js, Autostart with pm2, all tested on the Raspberry Pi. Go to https://cnc.js.org/docs/rpi-setup-guide/ for more details.
+
+---
 
 ### Node.js Installation
 
@@ -47,10 +57,12 @@ It's recommended that you run [Raspbian Jessie](https://www.raspberrypi.org/down
 
 Check out [wiki](https://github.com/cncjs/cncjs/wiki/Installation) for other installation methods.
 
-## Upgrade
+### Upgrade
+
 Run `npm install -g cncjs@latest` to install the latest version. To determine the version, use `cnc -V`.
 
-## Usage
+### Usage
+
 Run `cnc` or `~/.npm/bin/cnc` to start the server, and visit `http://yourhostname:8000/` to view the web interface:
 ```
 $ cnc
@@ -100,7 +112,7 @@ If you need view detailed logs for troubleshooting, you can run the server in de
 $ cnc -vvv
 ```
 
-## Configuration File
+### Configuration File
 
 The configuration file <b>.cncrc</b> contains settings that are equivalent to the cnc command-line options. The configuration file is stored in user's home directory. To find out the actual location of the home directory, do the following:
 
@@ -117,6 +129,7 @@ The configuration file <b>.cncrc</b> contains settings that are equivalent to th
 Check out an example configuration file [here](https://github.com/cncjs/cncjs/blob/master/examples/.cncrc).
 
 ### File Format
+
 ```json
 {
   "watchDirectory": "/path/to/dir",
@@ -148,7 +161,10 @@ Check out an example configuration file [here](https://github.com/cncjs/cncjs/bl
 }
 ```
 
+---
+
 ## Git Installation
+
 If you prefer to use Git instead of `npm install`, You can create a local clone of the repository on your computer and sync from GitHub. Type the following commands to install and run `cnc`:
 ```
 git clone https://github.com/cncjs/cncjs.git
@@ -170,7 +186,10 @@ npm run prepublish
 
 This is the fastest method to bring your local copy up-to-date.
 
+---
+
 ## Docker Image Installation (x64 only)
+
 Alternatively, you can install and run a Docker image within a Docker container. The first installation may take a long time to complete, but further updates will be much faster.
 
 To install and set up cnc, take the following steps:
@@ -189,6 +208,7 @@ By default a container is not allowed to access any devices, but a "privileged" 
 <b>Step 3:</b> If everything works fine, you should be able to view the web interface at `http://yourhostname:8000/`.
 
 ### Docker Images
+
 https://hub.docker.com/r/cncjs/cncjs/tags/
 
 ### Tips
