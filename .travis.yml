@@ -1,0 +1,29 @@
+sudo: required
+dist: trusty
+group: edge
+
+language: node_js
+
+os:
+  - linux
+
+node_js:
+  - '4'
+
+env:
+  global:
+    - secure: "fi2bJC90Sep5SozfOMx4hK+2+at/z1//puNyebo9cbFuAthrJOeNGqx/tP/mLZGfqyoKU7r5OkohbqHTbu6BtmfT0zyhYLkbCOg/QFn8DKO//dAY+cBD+9q2yA6cERzxePZRsdV67cnAjt4xuMHPGglHhV7NarpX30iuDAZEG6g/eyjpf94lTYYkp2B2srIZpybrVs2++HyvHNQd2997FPeSeDneHBIc021CEfVb48JOxFkc5ULCtXxt84G6Uir5AQIjxDTjYqT2au9YLD9HxETyO+8DmGJ7yzgc/gFPaNNx6Pz4ZEHkzqAo5/XdE4OiAv0jyxze0OJc62DW9fAzU2Aai9866rLY4zwSS50SMP64g7ZK822pdKsLBaCO3xTliQn+u4XEP4P3iIpURHUWOIxFZVFG/d2aTeDtq69ssGDFLqTiHusmotEzgGcnTvrjppt64g7W9veoNrjf8m01VU93RkbYwBNScFpArYTThSk17DaGljvZ9cewg/qViT5GFmsytInJt73fiaYmWXEM7uRUi33P7DLnT4PLV+ufwhmRAcdV6GACa5qQ5Jj1i26wija0upq8LocKWfgCzkMR17PfcBnzkBo/WiD+rIyJLePbQORA9gH1pxyYlCZk2TWNZdCEl8eAVNaeNTNWcLdtTsTUTKxjnO7fHutb2fjBbcU=" # GITHUB_TOKEN
+
+branches:
+  only:
+    - master
+
+before_install:
+  - npm install -g npm
+  - npm --version
+
+script:
+  - npm run build
+
+after_success:
+  - npm run deploy
