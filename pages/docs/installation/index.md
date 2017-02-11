@@ -2,6 +2,7 @@
 title: Installation
 contributors:
   - cheton
+  - AustinSaintAubin
 ---
 
 ## index
