@@ -1,5 +1,7 @@
 ---
 title: cncjs
+contributors:
+  - cheton
 ---
 
 [![Travis CI Build Status](https://travis-ci.org/cncjs/cncjs.svg)](https://travis-ci.org/cncjs/cncjs) [![AppVeyor Build status](https://ci.appveyor.com/api/projects/status/qxx53wq32w3edule?svg=true)](https://ci.appveyor.com/project/cheton/cncjs) [![Coverage Status](https://coveralls.io/repos/github/cncjs/cncjs/badge.svg?branch=master)](https://coveralls.io/github/cncjs/cncjs?branch=master)
@@ -21,15 +23,14 @@ A web-based interface for CNC milling controller running [Grbl](https://github.c
 * Allows multiple HTTP connections at the same serial port
 * Responsive view for small screen display with device width less than 720px
     - <i>Safari on an iPhone 5S</i> [\[1\]](https://cloud.githubusercontent.com/assets/447801/15633749/b817cd4a-25e7-11e6-9beb-600c65ea1324.PNG) [\[2\]](https://cloud.githubusercontent.com/assets/447801/15633750/b819b5f6-25e7-11e6-8bfe-d3e6247e443b.PNG)
-* [Account Management](https://cnc.js.org/docs/user-guide/#account-management)
-* [Widget Management](https://cnc.js.org/docs/user-guide/#widget-management)
 * [Keyboard Shortcuts](https://cnc.js.org/docs/user-guide/#keyboard-shortcuts)
 * [Contour ShuttleXpress](https://cnc.js.org/docs/user-guide/#contour-shuttlexpress)
+* Account Management
 * Multi-Language Support 
 * Watch Directory
 * Z-Probing
 
-## Ecosystem
+## Pendant
 
 * [cncjs-pendant-ps3](https://github.com/cncjs/cncjs-pendant-ps3)
 * [cncjs-pendant-tinyweb](https://github.com/cncjs/cncjs-pendant-tinyweb)
@@ -81,10 +82,10 @@ It's recommended that you run [Raspbian Jessie](https://www.raspberrypi.org/down
 
 Check out [here](https://cnc.js.org/docs/installation/) for other installation methods.
 
-## Upgrade
+### Upgrade
 Run `npm install -g cncjs@latest` to install the latest version. To determine the version, use `cnc -V`.
 
-## Usage
+### Usage
 Run `cnc` or `~/.npm/bin/cnc` to start the server, and visit `http://yourhostname:8000/` to view the web interface:
 ```
 $ cnc
@@ -134,7 +135,7 @@ If you need view detailed logs for troubleshooting, you can run the server in de
 $ cnc -vvv
 ```
 
-## Configuration File
+### Configuration File
 
 The configuration file <b>.cncrc</b> contains settings that are equivalent to the cnc command-line options. The configuration file is stored in user's home directory. To find out the actual location of the home directory, do the following:
 
@@ -183,9 +184,11 @@ Check out an example configuration file [here](https://github.com/cncjs/cncjs/bl
 ```
 
 ## Wiki
+
 https://github.com/cncjs/cncjs/wiki
 
 ## Examples
+
 There are several *.gcode files in the [examples](https://github.com/cncjs/cncjs/tree/master/examples) directory. You can use the GCode widget to load a GCode file and make a trial run.
 
 If you don't have a CAM software, try using [jscut](http://jscut.org/) to create G-Code from *.svg. It's a simple CAM package that runs in the browser.
