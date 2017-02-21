@@ -48,7 +48,7 @@ If you're using Node.js 4 or earlier versions, it's recommended that you upgrade
 npm install npm@latest -g
 ```
 
-### Getting Started
+### Installation
 
 Install cncjs as a non-root user, or the [serialport](https://github.com/EmergingTechnologyAdvisors/node-serialport) module may not install correctly on some platforms like Raspberry Pi.
 ```
