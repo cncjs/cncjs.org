@@ -14,22 +14,21 @@ contributors:
 
 ---
 
-### Raspberry Pi Setup Guide
+## Raspberry Pi Setup Guide
 
 We have a dedicated setup guide for setting up Node.js, NVM, CNC.js, Autostart with pm2, all tested on the Raspberry Pi. Go to https://cnc.js.org/docs/rpi-setup-guide/ for more details.
 
 ---
 
-### Node.js Installation
+## Node.js Installation
 
-Node.js v4 or higher is recommended. You can install [Node Version Manager](https://github.com/creationix/nvm) to manage multiple Node.js versions. If you have `git` installed, just clone the `nvm` repo, and check out the latest version:
+Node.js 4 or higher is recommended. You can install [Node Version Manager](https://github.com/creationix/nvm) to manage multiple Node.js versions. If you have `git` installed, just clone the `nvm` repo, and check out the latest version:
 ```
 git clone https://github.com/creationix/nvm.git ~/.nvm
 cd ~/.nvm
 git checkout `git describe --abbrev=0 --tags`
 cd ..
 . ~/.nvm/nvm.sh
-nvm install 4
 ```
 
 Add these lines to your `~/.bash_profile`, `~/.bashrc`, or `~/.profile` file to have it automatically sourced upon login: 
@@ -38,27 +37,32 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 ```
 
-If you're using Node.js v4 or earlier versions, it's recommended that you use npm v3 to install packages. To upgrade, run:
+Once installed, you can select Node.js versions with:
+```
+nvm install 4
+nvm use 4
+```
+
+If you're using Node.js 4 or earlier versions, it's recommended that you upgrade npm to the latest version. To upgrade, run:
 ```
 npm install npm@latest -g
 ```
 
 ### Getting Started
 
-Make sure you're using Node.js v4 (or higher) and npm v3:
+Install cncjs as a non-root user, or the [serialport](https://github.com/EmergingTechnologyAdvisors/node-serialport) module may not install correctly on some platforms like Raspberry Pi.
 ```
-$ nvm use 4
-Now using node v4.5.0 (npm v3.10.6)
+npm install -g cncjs
 ```
 
-Install `cncjs` without `sudo`, or the `serialport` module may not install correctly on some platforms like Raspberry Pi.
+If you're going to use sudo or root to install cncjs, you need to specify the `--unsafe-perm` option to run npm as the root account.
 ```
-$ npm install -g cncjs
+sudo npm install --unsafe-perm -g cncjs
 ```
 
 It's recommended that you run [Raspbian Jessie](https://www.raspberrypi.org/downloads/raspbian/) on the RPi2 or RPi3. For Raspbian Wheezy, be sure to [install gcc/g++ 4.8](https://somewideopenspace.wordpress.com/2014/02/28/gcc-4-8-on-raspberry-pi-wheezy/) before npm install.
 
-Check out [wiki](https://github.com/cncjs/cncjs/wiki/Installation) for other installation methods.
+Check out [https://cnc.js.org/docs/installation/](https://cnc.js.org/docs/installation/) for other installation methods.
 
 ### Upgrade
 
@@ -66,15 +70,10 @@ Run `npm install -g cncjs@latest` to install the latest version. To determine th
 
 ### Usage
 
-Run `cnc` or `~/.npm/bin/cnc` to start the server, and visit `http://yourhostname:8000/` to view the web interface:
-```
-$ cnc
-2016-12-01T15:00:41.499Z - info: Started the server at http://192.168.1.100:8000
-```
+Run `cnc` to start the server, and visit `http://yourhostname:8000/` to view the web interface. Pass `--help` to `cnc` for more options.
 
-Run `cnc` with -h for detailed usage:
 ```
-$ cnc -h
+pi@rpi3$ cnc -h
 
   Usage: cnc [options]
   
@@ -110,9 +109,9 @@ Instead of passing command line options for `--watch-directory`, `--access-token
 }
 ```
 
-If you need view detailed logs for troubleshooting, you can run the server in debug mode.
+To troubleshoot issues, run:
 ```
-$ cnc -vvv
+cnc -vvv
 ```
 
 ### Configuration File
@@ -132,7 +131,6 @@ The configuration file <b>.cncrc</b> contains settings that are equivalent to th
 Check out an example configuration file [here](https://github.com/cncjs/cncjs/blob/master/examples/.cncrc).
 
 ### File Format
-
 ```json
 {
   "watchDirectory": "/path/to/dir",
