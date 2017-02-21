@@ -49,14 +49,15 @@ sudo apt-get install htop iotop nmon lsof screen -y
  - [Install Node.js via Node Version Manager (NVM)](#install-install-nodejs-via-node-version-manager-nvm)
  - [Install Node.js Manually](#install-nodejs-manually)
  - Additional Configuration Options
-	 - [Wireless Setup](#wireless-setup)
+     - [Wireless Setup](#wireless-setup)
 
 ---------
 
 ### [Install Node.js via Package Manager](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
 ```
 # Install Node.js via Package Manager & Add Package Source
-curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+#curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -  # Install NodeJS v4
+curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -  # Install NodeJS v7
 sudo apt-get install -y nodejs  # npm nodejs-legacy #(Installed with nodesource)
 ```
 
@@ -279,8 +280,7 @@ pm2 update
 
 ---------
 
-# [TinyWeb Console for 320x240 LCD Display](https://github.com/cncjs/cncjs-pendant-tinyweb/)
-
+# [TinyWeb Console for 320x240 LCD Display](https://github.com/cncjs/cncjs/wiki/User-Guide#tinyweb-console-for-320x240-lcd-display)
 ```
 # Remove Older Downloads
 rm *tinyweb.zip
@@ -378,36 +378,36 @@ led_pin = 11  # (3) comes on when pi starts, (11) shuts off when pi powers down.
 
 # Define a function to keep script running
 def loop():
-	#input()  # (more efficient) but does not work with cron job
-	while True:
-		time.sleep(1)
+    #input()  # (more efficient) but does not work with cron job
+    while True:
+        time.sleep(1)
 
 # Define a function to blink LED
 def blink_led(interations):
-	for interation in range(interations):
-		gpio.output(led_pin,gpio.HIGH)
-		time.sleep(.5)
-		gpio.output(led_pin,gpio.LOW)
-		time.sleep(.5)
-		gpio.output(led_pin,gpio.HIGH)
+    for interation in range(interations):
+        gpio.output(led_pin,gpio.HIGH)
+        time.sleep(.5)
+        gpio.output(led_pin,gpio.LOW)
+        time.sleep(.5)
+        gpio.output(led_pin,gpio.HIGH)
 
 # Define a function to run when an interrupt is called
 def shutdown(pin):
-	# turn off led while pressed
-	gpio.output(led_pin,gpio.LOW)
+    # turn off led while pressed
+    gpio.output(led_pin,gpio.LOW)
 
-	#start counting pressed time
-	pressed_time=time.monotonic()
-	while gpio.input(button_pin): #call: is button still pressed
-		# Get Button Pressed Time
-		if time.monotonic()-pressed_time >= 3:
-			#os.system("echo long press, powering down") #os.system("sudo reboot")
-			blink_led(3)
-			call('halt', shell=False)
-			break
+    #start counting pressed time
+    pressed_time=time.monotonic()
+    while gpio.input(button_pin): #call: is button still pressed
+        # Get Button Pressed Time
+        if time.monotonic()-pressed_time >= 3:
+            #os.system("echo long press, powering down") #os.system("sudo reboot")
+            blink_led(3)
+            call('halt', shell=False)
+            break
 
-	# Turn LED back on
-	gpio.output(led_pin,gpio.HIGH)
+    # Turn LED back on
+    gpio.output(led_pin,gpio.HIGH)
 
 # Setup GPIO
 gpio.setmode(gpio.BOARD) # Set pin numbering to board numbering
