@@ -8,7 +8,7 @@ contributors:
 ## index
 
 * [Raspberry Pi Setup Guide](#raspberry-pi-setup-guide)
-* [Node.js Installation](#nodejs-installation)
+* [Getting Started](#getting-started)
 * [Git Installation](#git-installation)
 * [Docker Images](#docker-images)
 
@@ -20,7 +20,9 @@ We have a dedicated setup guide for setting up Node.js, NVM, CNC.js, Autostart w
 
 ---
 
-## Node.js Installation
+## Getting Started
+
+### Node.js Installation
 
 Node.js 4 or higher is recommended. You can install [Node Version Manager](https://github.com/creationix/nvm) to manage multiple Node.js versions. If you have `git` installed, just clone the `nvm` repo, and check out the latest version:
 ```
