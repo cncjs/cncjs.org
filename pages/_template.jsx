@@ -26,7 +26,8 @@ module.exports = React.createClass({
         const docsActive = includes(this.props.location.pathname, '/docs/');
         const projectsActive = includes(this.props.location.pathname, '/projects/');
         const path = trim(this.props.location.pathname, '/');
-        const edit = `https://github.com/cncjs/cncjs.org/edit/master/pages/${path}/index.md`;
+        const page = path ? path + '/index.md' : 'index.md';
+        const edit = `https://github.com/cncjs/cncjs.org/edit/master/pages/${page}`;
 
         return (
             <div>
