@@ -4,7 +4,7 @@ contributors:
   - cheton
 ---
 
-## Index
+## Table of Contents
 
 * [How can I enable WebGL in my browser?](#how-can-i-enable-webgl-in-my-browser)
 * [Raspberry Pi: Error opening serial port "ttyAMA0"](#raspberry-pi-error-opening-serial-port-ttyama0)
