@@ -15,9 +15,9 @@ Thank you!
 
 ## JSDC Speech
 
-JSDC 2015 speech: http://cheton.github.io/jsdc2015/#/81
+JSDC 2015 speech: https://cheton.github.io/jsdc2015/#/81
 
-[![cncjs](http://img.youtube.com/vi/fJyq4fyiGSc/0.jpg)](https://www.youtube.com/watch?v=fJyq4fyiGSc&hd=2 "cncjs")
+[![cncjs](https://img.youtube.com/vi/fJyq4fyiGSc/0.jpg)](https://www.youtube.com/watch?v=fJyq4fyiGSc&hd=2 "cncjs")
 
 ## Photo Gallery
 
