@@ -1,0 +1,21 @@
+.page__edit {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .page__edit {
+        position: absolute;
+        display: block;
+        top: 0;
+        right: 1.5em;
+        font-size: 13px;
+        text-transform: uppercase;
+    }
+    .page__edit:hover,
+    .page__edit:focus {
+        text-decoration: none;
+    }
+    .page__edit i {
+        font-size: 13px;
+    }
+}

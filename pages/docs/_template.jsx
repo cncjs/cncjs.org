@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import Breakpoint from 'components/Breakpoint';
 import Contributors from 'components/Contributors';
 import find from 'lodash/find';
+import trim from 'lodash/trim';
 import { prefixLink } from 'gatsby-helpers';
 import { config } from '../../config';
 import typography from '../../utils/typography';
@@ -61,6 +62,8 @@ module.exports = React.createClass({
                 </li>
             );
         });
+        const path = activePage ? trim(activePage.path, '/') : 'docs';
+        const edit = `https://github.com/cncjs/cncjs.org/edit/master/pages/${path}/index.md`;
 
         return (
             <div>
@@ -90,6 +93,14 @@ module.exports = React.createClass({
                             paddingLeft: `calc(${rhythm(8)} + ${rhythm(1)})`,
                         }}
                     >
+                        <a
+                            className="page__edit"
+                            href={edit}
+                        >
+                            EDIT THIS PAGE
+                            &nbsp;
+                            <i className="fa fa-edit" />
+                        </a>
                         {this.props.children}
                         {activePage.contributors.length > 0 &&
                             <div>

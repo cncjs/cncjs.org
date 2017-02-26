@@ -2,7 +2,8 @@ import classNames from 'classnames';
 import React from 'react';
 import { Link } from 'react-router';
 import { prefixLink } from 'gatsby-helpers';
-import includes from 'underscore.string/include';
+import trim from 'lodash/trim';
+import includes from 'lodash/includes';
 import GitHubButton from 'react-github-button';
 import { colors, activeColors } from '../utils/colors';
 import typography from '../utils/typography';
@@ -13,6 +14,7 @@ import Nav from './nav';
 import 'react-github-button/assets/style.css';
 import 'css/main.css';
 import 'css/github.css';
+import 'css/page.css';
 
 module.exports = React.createClass({
     propTypes() {
@@ -23,6 +25,8 @@ module.exports = React.createClass({
     render() {
         const docsActive = includes(this.props.location.pathname, '/docs/');
         const projectsActive = includes(this.props.location.pathname, '/projects/');
+        const path = trim(this.props.location.pathname, '/');
+        const edit = `https://github.com/cncjs/cncjs.org/edit/master/pages/${path}/index.md`;
 
         return (
             <div>
@@ -54,7 +58,6 @@ module.exports = React.createClass({
                             <div style={{ padding: 15, height: 50 }}>
                                 <GitHubButton
                                     type="stargazers"
-                                    size="default"
                                     namespace="cncjs"
                                     repo="cncjs"
                                 />
@@ -62,7 +65,15 @@ module.exports = React.createClass({
                         </li>
                     </ul>
                 </Nav>
-                <div className="container">
+                <div className="container" style={{ position: 'relative' }}>
+                    <a
+                        className="page__edit"
+                        href={edit}
+                    >
+                        EDIT THIS PAGE
+                        &nbsp;
+                        <i className="fa fa-edit" />
+                    </a>
                     {this.props.children}
                 </div>
             </div>
