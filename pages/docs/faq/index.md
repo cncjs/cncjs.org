@@ -54,6 +54,8 @@ Otherwise, you can also set the "enabled" attribute to a false value for all use
 ]
 ```
 
+---
+
 ## How can I enable WebGL in my browser?
 
 Navigate to http://webglreport.com/ to make sure your browser support WebGL.
@@ -351,3 +353,5 @@ If you don't have an Arduino, check out [grbl-sim](https://github.com/grbl/grbl-
 6. Open `/dev/ttyFAKE` from the Connection widget to interact with the Grbl simulator as if connected to an Arduino with Grbl.
 
   ![ttyFAKE](https://raw.githubusercontent.com/cncjs/cncjs/master/media/ttyFAKE.png)
+  
+---
