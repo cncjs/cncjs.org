@@ -6,6 +6,7 @@ contributors:
 
 ## Table of Contents
 
+* [Forgot your password?](#forgot-your-password)
 * [How can I enable WebGL in my browser?](#how-can-i-enable-webgl-in-my-browser)
 * [Raspberry Pi: Error opening serial port "ttyAMA0"](#raspberry-pi-error-opening-serial-port-ttyama0)
 * [Webcam Streaming with Raspberry Pi](#webcam-streaming-with-raspberry-pi)
@@ -17,6 +18,41 @@ contributors:
 * [Run cncjs without Arduino board](#run-cncjs-without-arduino-board)
  
 ---
+
+## Forgot your password?
+
+![image](https://cloud.githubusercontent.com/assets/447801/23395873/d9f64330-fdcb-11e6-924a-53be97711781.png)
+
+cncjs 1.8 adds multi-account management support to enable secure web access and web socket connections. The web interface will automatically redirect user to the <strong>Sign In</strong> page when at least one user account has been enabled in <strong>Settings > Account</strong>.
+
+If you forgot your password, find user account settings in the `~/.cncrc` file, and remove all existing users:
+
+* Linux / Mac: `~/.cncrc` (e.g. `/home/pi/.cncrc`)
+* Windows: `%USERPROFILE%\.cncrc` (e.g. `C:\Users\User Name\.cncrc`)
+
+```json
+"users": []
+```
+
+
+Otherwise, you can also set the "enabled" attribute to a false value for all users to disable secure web access. For example:
+
+```json
+"users": [
+  {
+    "id": "......",
+    "enabled": false,
+    "name": "admin1",
+    "password": "......"
+   },
+   {
+    "id": "......",
+    "enabled": false,
+    "name": "admin2",
+    "password": "......"
+   }
+]
+```
 
 ## How can I enable WebGL in my browser?
 
