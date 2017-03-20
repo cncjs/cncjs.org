@@ -62,6 +62,29 @@ This widget shows the TinyG state and provides TinyG specific features.
 
 This widget allows you control laser intensity and turn the laser on/off.
 
+#### Macro Widget
+
+This widget can use macros to automate routine tasks. The following variables are supported since cncjs 1.9:
+- [xmin]
+- [xmax]
+- [ymin]
+- [ymax]
+- [zmin]
+- [zmax]
+
+See the example below:
+
+```
+; Traverse around the boundary
+G90
+G0 Z10 ; go to z-safe
+G0 X[xmin] Y[ymin]
+G0 X[xmax]
+G0 Y[ymax]
+G0 X[xmin]
+G0 Y[ymin]
+```
+
 #### Probe Widget
 
 This widget helps you use a touch plate to set your Z zero offset.
