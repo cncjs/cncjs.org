@@ -72,7 +72,7 @@ This widget can use macros to automate routine tasks. The following variables ar
 - [zmin]
 - [zmax]
 
-See the example below:
+You can create a macro with the following content:
 
 ```
 ; Traverse around the boundary
@@ -84,6 +84,10 @@ G0 Y[ymax]
 G0 X[xmin]
 G0 Y[ymin]
 ```
+
+Once a G-code file is loaded, run the macro for perimeter tracing with respect to current G-code boundary.
+
+![image](https://cloud.githubusercontent.com/assets/447801/24189183/f924b7aa-0f1e-11e7-8b6f-64a14c23d441.png)
 
 #### Probe Widget
 
