@@ -4,6 +4,8 @@ contributors:
   - AustinSaintAubin
 ---
 
+# Raspberry Pi Setup Guide
+
 We recommend that you use a [Raspberry Pi 3](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) or [Raspberry Pi 2](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) because of the performance requirements of the Node.js application. If you a buying a raspberry pi, [buy a Raspberry Pi 3](https://www.amazon.com/Raspberry-Pi-RASP-PI-3-Model-Motherboard/dp/B01CD5VC92) or latest model.
 
 #### Recommed Software (for a full web capatable CNC software stack):
@@ -51,12 +53,11 @@ sudo apt-get install htop iotop nmon lsof screen -y
  - Additional Configuration Options
      - [Wireless Setup](#wireless-setup)
 
----------
+----------------------------------------
 
 ### [Install Node.js via Package Manager](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
 ```
 # Install Node.js via Package Manager & Add Package Source
-#curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -  # Install NodeJS v4
 curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -  # Install NodeJS v7
 sudo apt-get install -y nodejs  # npm nodejs-legacy #(Installed with nodesource)
 ```
@@ -74,8 +75,16 @@ echo "[NODE] ============"; which node; node -v
 ~~### Install Node.JS Serial Port application first (OPTIONAL)
 ```npm install serialport```~~
 
-### Install CNC.js
-```sudo npm install -g cncjs --unsafe-perm```
+### Install CNCjs
+```
+# Install Latest Release Version of CNCjs
+sudo npm install -g cncjs@latest --unsafe-perm
+
+# --- OR ----
+
+# Install Specific Version of CNCjs
+#sudo npm install -g cncjs@v1.9.0-beta.1 --unsafe-perm  # Installs Specific Version based on TAG
+```
 
 ### Install [Production Process Manager [PM2]](http://pm2.io)
 ```
@@ -86,10 +95,10 @@ sudo npm install -g pm2
 # sudo pm2 startup  # To Start PM2 as root
 pm2 startup  # To start PM2 as pi / current user
   #[PM2] You have to run this command as root. Execute the following command:
-  sudo su -c "env PATH=$PATH:/usr/bin pm2 startup linux -u pi --hp /home/pi"
+  sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u pi --hp /home/pi
 
-# Start CNC.js (on port 8000) with PM2
-pm2 start $(which cnc) -- --port 8000
+# Start CNCjs (on port 8000, /w Tinyweb mount point) with PM2
+pm2 start $(which cncjs) -- --port 8000 -m /tinyweb:/home/pi/tinyweb
 
 # Set current running apps to startup
 pm2 save
@@ -124,7 +133,7 @@ sudo apt-get install iptables-persistent -y
 #### **You're Done, STOP HERE!!!**
 The information below is a breakdown of the process above with different / additional options as part of a separate process.
 
------------
+----------------------------------------
 
 ## [Install Install Node.js via Node Version Manager (NVM)](https://github.com/creationix/nvm)
 ### [Install Node Version Manager (NVM)](https://github.com/creationix/nvm)
@@ -161,7 +170,7 @@ echo "[NODE] ============"; which node; node -v
 ~~### Install Node.JS Serial Port application first (OPTIONAL)
 ```npm install serialport```~~
 
-### Install CNC.js
+### Install CNCjs
 ```npm install -g cncjs```
 
 ### Allow access to port 8000 from port 80
@@ -192,8 +201,8 @@ sudo apt-get install iptables-persistent -y
 # Install Production Process Manager [PM2]
 npm install pm2 -g
 
-# Start CNC.js (on port 8000) with PM2
-pm2 start /home/pi/.nvm/versions/node/v4.5.0/bin/cnc -- --port 8000
+# Start CNCjs (on port 8000) with PM2
+pm2 start $(which cncjs) -- --port 8000
 
 # Setup PM2 Startup Script
 pm2 startup debian
@@ -218,7 +227,7 @@ crontab -u pi -e
 
 #### **You're Done, STOP HERE!!!**
 
----------
+----------------------------------------
 
 ### Install Node.js Manually
 Information on how to install Node.js on Raspberry Pi 1 or ARM6 devices
@@ -232,7 +241,7 @@ sudo cp -R * /usr/local/
 ```
 Resume install at [Update Node Package Manager (NPM)](#update-node-package-manager-npm)
 
----------
+----------------------------------------
 
 ## Maintaining your Software Stack w/ Updates & Upgrades
 ### Updates & Upgrade System
@@ -254,15 +263,16 @@ echo "[NPM] ============"; which npm; npm -v;
 echo "[NODE] ============"; which node; node -v
 ```
 
-### Update CNC.js
+### Update CNCjs
 ```
-# Stop CNC.js in PM2 
+# Stop CNCjs in PM2 
 pm2 stop cnc
 
-# Update CNC.js
-sudo npm update -g cncjs --unsafe-perm  # If fails, then reinstall CNC.js ( sudo npm uninstall -g cncjs; sudo npm install -g cncjs --unsafe-perm ) | https://github.com/cncjs/cncjs/issues/78
+# Update CNCjs
+#sudo npm update -g cncjs --unsafe-perm  #  Tends to fail to update CNCjs, so we will reinstall CNCjs will the command bellow (no settings will be lost)
+sudo npm install -g cncjs --unsafe-perm  # Install CNCjs again, if this fails or causes issue then run (sudo npm uninstall -g cncjs; sudo npm install -g cncjs --unsafe-perm )   https://github.com/cncjs/cncjs/issues/78
 
-# Restart CNC.js in PM2
+# Restart CNCjs in PM2
 pm2 start cnc
 ```
 
@@ -278,30 +288,34 @@ And finally update the in-memory PM2 process:
 pm2 update
 ```
 
----------
+----------------------------------------
 
 # [TinyWeb Console for 320x240 LCD Display](https://github.com/cncjs/cncjs/wiki/User-Guide#tinyweb-console-for-320x240-lcd-display)
 ```
 # Remove Older Downloads
-rm *tinyweb.zip
+rm -r cncjs-pendant-tinyweb*
 
 # Download TinyWeb Example
 wget https://github.com/cncjs/cncjs-pendant-tinyweb/releases/download/latest/cncjs-pendant-tinyweb-1.0.0-613f598.zip
 
-# Extract Achieve
-unzip *tinyweb.zip -d /home/pi/
+# Extract Archive & Delete
+unzip cncjs-pendant-tinyweb*.zip -d /home/pi/
+rm -r cncjs-pendant-tinyweb*.zip
 
-# How-to Start CNC.js w/ mounted TinyWeb
-#cnc -m /tinyweb:/home/pi/tinyweb
+# Move / Rename Tinyweb Directory
+mv /home/pi/cncjs-pendant-tinyweb* /home/pi/tinyweb
 
-# Start CNC.js (on port 8000) with PM2 w/ mounted TinyWeb
-pm2 stop cnc  # stop pervious instance
-pm2 delete cnc  # delete pervious instance
-pm2 start $(which cnc) -- --port 8000 -m /tinyweb:/home/pi/tinyweb
+# How-to Start CNCjs w/ mounted TinyWeb
+cncjs -m /tinyweb:/home/pi/tinyweb
+
+# Start CNCjs (on port 8000, /w Tinyweb) with PM2
+pm2 stop cncjs  # stop pervious instance
+pm2 delete cnsjc  # delete pervious instance
+pm2 start $(which cncjs) -- --port 8000 -m /tinyweb:/home/pi/tinyweb
 pm2 save # Set current running apps to startup
 ```
 
----------
+----------------------------------------
 
 # [Wireless Setup](https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md)
 https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=139866
@@ -340,7 +354,233 @@ sudo ifup wlan0
 ifconfig wlan0
 ```
 
----------
+----------------------------------------
+
+# MJPEG-Streamer Install & Setup
+- https://github.com/jacksonliam/mjpg-streamer
+- http://raspberrypi.stackexchange.com/questions/36734/compile-mjpg-streamer-error
+
+```
+# Update & Install Tools
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get install build-essential libjpeg8-dev imagemagick libv4l-dev cmake -y
+
+# Clone Repo in /tmp
+cd /tmp
+git clone https://github.com/jacksonliam/mjpg-streamer.git
+cd mjpg-streamer/mjpg-streamer-experimental
+
+# Make
+make
+sudo make install
+
+# Run
+/usr/local/bin/mjpg_streamer -i "input_uvc.so -r 1280x720 -d /dev/video0 -f 30 -q 80" -o "output_http.so -p 8080 -w /usr/local/share/mjpg-streamer/www"
+```
+
+# MJPEG-Streamer Auto Start
+
+## Manager Script
+```
+nano /home/pi/mjpg-streamer.sh
+```
+Add the below code to ( /home/pi/mjpg-streamer.sh )
+```
+#!/bin/bash
+# chmod +x mjpg-streamer.sh
+# Crontab: @reboot /home/pi/mjpg-streamer.sh start
+
+MJPG_STREAMER_BIN="/usr/local/bin/mjpg_streamer" # "$(dirname $0)/mjpg_streamer"
+MJPG_STREAMER_WWW="/usr/local/share/mjpg-streamer/www"
+MJPG_STREAMER_LOG_FILE="$(dirname $0)/mjpg-streamer.log"
+RUNNING_CHECK_INTERVAL="2" # how often to check to make sure the server is running (in seconds)
+HANGING_CHECK_INTERVAL="3" # how often to check to make sure the server is not hanging (in seconds)
+
+VIDEO_DEV="/dev/video0"
+FRAME_RATE="30"
+QUALITY="60"
+RESOLUTION="VGA"  # 1920x1080, 1280x720, 640x480 (VGA, SVGA), 176x144, 160x120, 352x288, 320x240 (QVGA)
+PORT="8080"
+YUV="yes"
+
+INPUT_OPTIONS="-r ${RESOLUTION} -d ${VIDEO_DEV} -f ${FRAME_RATE} -q ${QUALITY}"
+if [ "${YUV}" == "true" ]; then
+	INPUT_OPTIONS+=" -y"
+fi
+
+OUTPUT_OPTIONS="-p ${PORT} -w ${MJPG_STREAMER_WWW}"
+
+# ==========================================================
+function running() {
+    if ps aux | grep ${MJPG_STREAMER_BIN} | grep ${VIDEO_DEV} >/dev/null 2>&1; then
+        return 0
+
+    else
+        return 1
+
+    fi
+}
+
+function start() {
+    if running; then
+        echo "already started"
+        return 1
+    fi
+
+    export LD_LIBRARY_PATH="$(dirname $MJPG_STREAMER_BIN):."
+
+	echo "Starting:  ${MJPG_STREAMER_BIN} -i \"input_uvc.so ${INPUT_OPTIONS}\" -o \"output_http.so ${OUTPUT_OPTIONS}\""
+    ${MJPG_STREAMER_BIN} -i "input_uvc.so ${INPUT_OPTIONS}" -o "output_http.so ${OUTPUT_OPTIONS}" >> ${MJPG_STREAMER_LOG_FILE} 2>&1 &
+
+    sleep 1
+
+    if running; then
+        if [ "$1" != "nocheck" ]; then
+            check_running & > /dev/null 2>&1 # start the running checking task
+            check_hanging & > /dev/null 2>&1 # start the hanging checking task
+        fi
+
+        echo "started"
+        return 0
+
+    else
+        echo "failed to start"
+        return 1
+
+    fi
+}
+
+function stop() {
+    if ! running; then
+        echo "not running"
+        return 1
+    fi
+
+    own_pid=$$
+
+    if [ "$1" != "nocheck" ]; then
+        # stop the script running check task
+        ps aux | grep $0 | grep start | tr -s ' ' | cut -d ' ' -f 2 | grep -v ${own_pid} | xargs -r kill
+        sleep 0.5
+    fi
+
+    # stop the server
+    ps aux | grep ${MJPG_STREAMER_BIN} | grep ${VIDEO_DEV} | tr -s ' ' | cut -d ' ' -f 2 | grep -v ${own_pid} | xargs -r kill
+
+    echo "stopped"
+    return 0
+}
+
+function check_running() {
+    echo "starting running check task" >> ${MJPG_STREAMER_LOG_FILE}
+
+    while true; do
+        sleep ${RUNNING_CHECK_INTERVAL}
+
+        if ! running; then
+            echo "server stopped, starting" >> ${MJPG_STREAMER_LOG_FILE}
+            start nocheck
+        fi
+    done
+}
+
+function check_hanging() {
+    echo "starting hanging check task" >> ${MJPG_STREAMER_LOG_FILE}
+
+    while true; do
+        sleep ${HANGING_CHECK_INTERVAL}
+
+        # treat the "error grabbing frames" case
+        if tail -n2 ${MJPG_STREAMER_LOG_FILE} | grep -i "error grabbing frames" > /dev/null; then
+            echo "server is hanging, killing" >> ${MJPG_STREAMER_LOG_FILE}
+            stop nocheck
+        fi
+    done
+}
+
+function help() {
+    echo "Usage: $0 [start|stop|restart|status]"
+    return 0
+}
+
+if [ "$1" == "start" ]; then
+    start && exit 0 || exit -1
+
+elif [ "$1" == "stop" ]; then
+    stop && exit 0 || exit -1
+
+elif [ "$1" == "restart" ]; then
+    stop && sleep 1
+    start && exit 0 || exit -1
+
+elif [ "$1" == "status" ]; then
+    if running; then
+        echo "running"
+        exit 0
+
+    else
+        echo "stopped"
+        exit 1
+
+    fi
+
+else
+    help
+
+fi
+```
+
+## Start on Boot
+```
+# Make Executable
+chmod +x /home/pi/mjpg-streamer.sh
+
+# Open Cron Job
+crontab -e
+
+# Add line
+@reboot /home/pi/mjpg-streamer.sh start
+```
+
+----------------------------------------
+
+# FFMpeg
+http://www.jeffreythompson.org/blog/2014/11/13/installing-ffmpeg-for-raspberry-pi/
+```
+# Run as Sudo
+sudo -i
+
+# INSTALL H264 SUPPORT
+cd /usr/src
+git clone git://git.videolan.org/x264
+cd x264
+./configure --host=arm-unknown-linux-gnueabi --enable-static --disable-opencl
+make
+sudo make install
+
+# INSTALL FFMPEG (This may take a REALLY long time, so be patient.)
+cd /usr/src
+git clone https://github.com/FFmpeg/FFmpeg.git
+cd FFmpeg
+sudo ./configure --arch=armel --target-os=linux --enable-gpl --enable-libx264 --enable-nonfree
+make
+sudo make install
+```
+
+# Recored Stream w/ ffmpeg
+```
+# [Varables]
+source_stram="http://xcarve:8080/?action=stream"
+destination_directory="/home/pi/Videos"
+destination_file="xcarve-recording_$(date +'%Y%m%d_%H%M%S').mpeg"
+
+# Recored Stream w/ ffmpeg
+ffmpeg -i "${source_stram}" "${destination_directory}/${destination_file}"
+```
+
+----------------------------------------
+
 # [Raspberry Pi Shutdown Button & LED Script](https://twitter.com/AustinStAubin/status/798058374059335680)
 Gracefully shutdown the Raspberry Pi using a hardware button.
 - http://www.banggood.com/Power-Symbol-Latching-Switch-LED-Light-Push-Button-SPST-p-1064278.html
@@ -420,6 +660,11 @@ gpio.add_event_detect(button_pin, gpio.RISING, callback=shutdown, bouncetime=200
 gpio.setup(led_pin, gpio.OUT, initial=1)
 
 loop() # Run the loop function to keep script running
+```
+
+## Set to Executable
+```
+sudo chmod +x  /root/shutdown_button_pi.py
 ```
 
 ## Run Script & Test
