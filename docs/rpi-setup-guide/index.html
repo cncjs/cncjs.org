@@ -1,5 +1,6 @@
 <!DOCTYPE html>
- <html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Raspberry Pi Setup Guide | cncjs</title><meta name="description" content=""/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:87.5%/1.5em -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-weight:normal;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.618rem;line-height:2.25rem;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.33471rem;line-height:2.25rem;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.21225rem;line-height:1.5rem;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.5rem;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.90825rem;line-height:1.5rem;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.86558rem;line-height:1.5rem;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}ul{margin-left:1.5rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.5rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;font-size:0.85rem;line-height:1.42;background:hsla(0,0%,0%,0.04);border-radius:3px;overflow:auto;word-wrap:normal;padding:1.5rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;font-size:1rem;line-height:1.5rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}blockquote{margin-left:1.5rem;margin-right:1.5rem;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.5rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}b{font-weight:bold;}strong{font-weight:bold;}dt{font-weight:bold;}th{font-weight:bold;}li{margin-bottom:calc(1.5rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.5rem;margin-bottom:calc(1.5rem / 2);margin-top:calc(1.5rem / 2);}li > ul{margin-left:1.5rem;margin-bottom:calc(1.5rem / 2);margin-top:calc(1.5rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.5rem / 2);}code{font-size:0.85rem;line-height:1.5rem;}kbd{font-size:0.85rem;line-height:1.5rem;}samp{font-size:0.85rem;line-height:1.5rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:tnum;-moz-font-feature-settings:tnum;-ms-font-feature-settings:tnum;-webkit-font-feature-settings:tnum;padding-left:1rem;padding-right:1rem;padding-top:0.75rem;padding-bottom:calc(0.75rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}tt,code{background-color:hsla(0,0%,0%,0.04);border-radius:3px;font-family:"SFMono-Regular", Consolas,"Roboto Mono","Droid Sans Mono","Liberation Mono",Menlo,Courier,monospace;padding:0;padding-top:0.2em;padding-bottom:0.2em;}pre code{background:none;line-height:1.42;}code:before,code:after,tt:before,tt:after{letter-spacing:-0.2em;content:" ";}pre code:before,pre code:after,pre tt:before,pre tt:after{content:"";}</style><style>.github-btn{font:700 11px/14px Helvetica Neue,Helvetica,Arial,sans-serif;height:20px;overflow:hidden}.gh-btn,.gh-count,.gh-ico{float:left}.gh-btn,.gh-count{padding:2px 5px 2px 4px;color:#333;text-decoration:none;white-space:nowrap;cursor:pointer;border-radius:3px}.gh-btn{background-color:#eee;background-image:linear-gradient(180deg,#fcfcfc 0,#eee);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#fcfcfc",endColorstr="#eeeeee",GradientType=0);background-repeat:no-repeat;border:1px solid #d5d5d5}.gh-btn:focus,.gh-btn:hover{text-decoration:none;background-color:#ddd;background-image:linear-gradient(180deg,#eee 0,#ddd);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeeeee",endColorstr="#dddddd",GradientType=0);border-color:#ccc}.gh-btn:active{background-image:none;background-color:#dcdcdc;border-color:#b5b5b5;box-shadow:inset 0 2px 4px rgba(0,0,0,.15)}.gh-ico{width:14px;height:14px;margin-right:4px;background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjQwcHgiIGhlaWdodD0iNDBweCIgdmlld0JveD0iMTIgMTIgNDAgNDAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMTIgMTIgNDAgNDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiMzMzMzMzMiIGQ9Ik0zMiAxMy40Yy0xMC41IDAtMTkgOC41LTE5IDE5YzAgOC40IDUuNSAxNS41IDEzIDE4YzEgMC4yIDEuMy0wLjQgMS4zLTAuOWMwLTAuNSAwLTEuNyAwLTMuMiBjLTUuMyAxLjEtNi40LTIuNi02LjQtMi42QzIwIDQxLjYgMTguOCA0MSAxOC44IDQxYy0xLjctMS4yIDAuMS0xLjEgMC4xLTEuMWMxLjkgMC4xIDIuOSAyIDIuOSAyYzEuNyAyLjkgNC41IDIuMSA1LjUgMS42IGMwLjItMS4yIDAuNy0yLjEgMS4yLTIuNmMtNC4yLTAuNS04LjctMi4xLTguNy05LjRjMC0yLjEgMC43LTMuNyAyLTUuMWMtMC4yLTAuNS0wLjgtMi40IDAuMi01YzAgMCAxLjYtMC41IDUuMiAyIGMxLjUtMC40IDMuMS0wLjcgNC44LTAuN2MxLjYgMCAzLjMgMC4yIDQuNyAwLjdjMy42LTIuNCA1LjItMiA1LjItMmMxIDIuNiAwLjQgNC42IDAuMiA1YzEuMiAxLjMgMiAzIDIgNS4xYzAgNy4zLTQuNSA4LjktOC43IDkuNCBjMC43IDAuNiAxLjMgMS43IDEuMyAzLjVjMCAyLjYgMCA0LjYgMCA1LjJjMCAwLjUgMC40IDEuMSAxLjMgMC45YzcuNS0yLjYgMTMtOS43IDEzLTE4LjFDNTEgMjEuOSA0Mi41IDEzLjQgMzIgMTMuNHoiLz48L3N2Zz4=");background-size:100% 100%;background-repeat:no-repeat}.gh-count{position:relative;display:none;margin-left:4px;background-color:#fafafa;border:1px solid #d4d4d4}.gh-count:focus,.gh-count:hover{color:#4183c4}.gh-count:after,.gh-count:before{content:"";position:absolute;display:inline-block;width:0;height:0;border-color:transparent;border-style:solid}.gh-count:before{top:50%;left:-3px;margin-top:-4px;border-width:4px 4px 4px 0;border-right-color:#fafafa}.gh-count:after{top:50%;left:-4px;z-index:-1;margin-top:-5px;border-width:5px 5px 5px 0;border-right-color:#d4d4d4}.github-btn-large{height:30px}.github-btn-large .gh-btn,.github-btn-large .gh-count{padding:3px 10px 3px 8px;font-size:16px;line-height:22px;border-radius:4px}.github-btn-large .gh-ico{width:20px;height:20px}.github-btn-large .gh-count{margin-left:6px}.github-btn-large .gh-count:before{left:-5px;margin-top:-6px;border-width:6px 6px 6px 0}.github-btn-large .gh-count:after{left:-6px;margin-top:-7px;border-width:7px 7px 7px 0}.nav>li,img{margin-bottom:0}.hljs-comment,.hljs-quote{color:#998;font-style:italic}.hljs-keyword,.hljs-selector-tag,.hljs-subst{color:#333;font-weight:700}.hljs-literal,.hljs-number,.hljs-tag .hljs-attr,.hljs-template-variable,.hljs-variable{color:teal}.hljs-doctag,.hljs-string{color:#d14}.hljs-section,.hljs-selector-id,.hljs-title{color:#900;font-weight:700}.hljs-subst{font-weight:400}.hljs-class .hljs-title,.hljs-type{color:#458;font-weight:700}.hljs-attribute,.hljs-name,.hljs-tag{color:navy;font-weight:400}.hljs-link,.hljs-regexp{color:#009926}.hljs-bullet,.hljs-symbol{color:#990073}.hljs-built_in,.hljs-builtin-name{color:#0086b3}.hljs-meta{color:#999;font-weight:700}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}.page__edit{display:none}@media (min-width:768px){.page__edit{position:absolute;display:block;top:0;right:1.5em;font-size:13px;text-transform:uppercase}.page__edit:focus,.page__edit:hover{text-decoration:none}.page__edit i{font-size:13px}}@media only screen and (min-width:700px){.breakpoint-min-width-700{display:block}.breakpoint-max-width-700{display:none}}@media only screen and (max-width:700px){.breakpoint-min-width-700{display:none}.breakpoint-max-width-700{display:block}}._2Len9LGxtUJ6nVK4VzO8nr{padding:6px}._24UGgNoPpqYOYWy78Y7-7L{display:-ms-inline-flexbox;display:inline-flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-align:center;align-items:center;margin-right:1em;font-size:14px}._24UGgNoPpqYOYWy78Y7-7L img{height:45px;width:45px;border-radius:50%;box-shadow:0 0 2px rgba(0,0,0,.3)}._24UGgNoPpqYOYWy78Y7-7L ._3P40Ju0MfFBTDmTFbL4-zM{color:#465e69;margin-top:-6px;box-shadow:0 0 2px rgba(0,0,0,.3);line-height:1.4;transition:color .1s;padding:0 6px;border-radius:2px;background:hsla(0,0%,100%,.95)}._24UGgNoPpqYOYWy78Y7-7L:hover ._3P40Ju0MfFBTDmTFbL4-zM{color:#2086d7}</style></head><body><div id="react-mount"><div data-reactroot="" data-reactid="1" data-react-checksum="-2091231396"><nav class="navbar navbar-inverse" style="border-radius:0;" data-reactid="2"><div class="container" data-reactid="3"><div class="navbar-header" data-reactid="4"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-reactid="5"><span class="sr-only" data-reactid="6">Toggle navigation</span><span class="icon-bar" data-reactid="7"></span><span class="icon-bar" data-reactid="8"></span><span class="icon-bar" data-reactid="9"></span></button><a class="navbar-brand" href="/" style="font-size:24px;padding:5px 0 5px 15px;" data-reactid="10"><img alt="brand" src="/logo.png" style="display:inline-block;width:40px;height:40px;margin-right:8px;" data-reactid="11"/></a></div><div class="collapse navbar-collapse" data-reactid="12"><div class="nav navbar-right" data-reactid="13"><ul class="nav navbar-nav navbar-right" data-reactid="14"><li class="active" data-reactid="15"><a href="/docs/" data-reactid="16">Documentation</a></li><li class="" data-reactid="17"><a href="/projects/" data-reactid="18">Projects</a></li><li data-reactid="19"><div style="padding:15px;height:50px;" data-reactid="20"><span class="github-btn" data-reactid="21"><a class="gh-btn" href="//github.com/cncjs/cncjs/" target="_blank" data-reactid="22"><span class="gh-ico" aria-hidden="true" data-reactid="23"></span><span class="gh-text" data-reactid="24">Star</span></a><a class="gh-count" target="_blank" href="//github.com/cncjs/cncjs/stargazers/" data-reactid="25"></a></span></div></li></ul></div></div></div></nav><div class="container" style="position:relative;" data-reactid="26"><a class="page__edit" href="https://github.com/cncjs/cncjs.org/edit/master/pages/docs/rpi-setup-guide/index.md" data-reactid="27"><!-- react-text: 28 -->EDIT THIS PAGE  <!-- /react-text --><i class="fa fa-edit" data-reactid="29"></i></a><div data-reactid="30"><div class="breakpoint-min-width-700" data-reactid="31"><div style="overflow-y:auto;padding-right:calc(0.75rem - 1px);position:absolute;width:calc(12rem - 1px);border-right:1px solid lightgrey;" data-reactid="32"><ul style="list-style:none;margin-left:0;margin-top:0.75rem;" data-reactid="33"><li style="margin-bottom:0.75rem;" data-reactid="34"><a style="text-decoration:none;" href="/docs/" data-reactid="35">Introduction</a></li><li style="margin-bottom:0.75rem;" data-reactid="36"><a style="text-decoration:none;" href="/docs/installation/" data-reactid="37">Installation</a></li><li style="margin-bottom:0.75rem;" data-reactid="38"><a style="text-decoration:none;" href="/docs/rpi-setup-guide/" data-reactid="39"><strong data-reactid="40">Raspberry Pi Setup Guide</strong></a></li><li style="margin-bottom:0.75rem;" data-reactid="41"><a style="text-decoration:none;" href="/docs/desktop-app/" data-reactid="42">Desktop App</a></li><li style="margin-bottom:0.75rem;" data-reactid="43"><a style="text-decoration:none;" href="/docs/user-guide/" data-reactid="44">User Guide</a></li><li style="margin-bottom:0.75rem;" data-reactid="45"><a style="text-decoration:none;" href="/docs/troubleshooting/" data-reactid="46">Troubleshooting</a></li><li style="margin-bottom:0.75rem;" data-reactid="47"><a style="text-decoration:none;" href="/docs/faq/" data-reactid="48">FAQ</a></li><li style="margin-bottom:0.75rem;" data-reactid="49"><a style="text-decoration:none;" href="/docs/resources/" data-reactid="50">Resources</a></li><li style="margin-bottom:0.75rem;" data-reactid="51"><a style="text-decoration:none;" href="/docs/about/" data-reactid="52">About</a></li></ul></div><div style="padding:0 1.5rem;padding-left:calc(12rem + 1.5rem);" data-reactid="53"><a class="page__edit" href="https://github.com/cncjs/cncjs.org/edit/master/pages/docs/rpi-setup-guide/index.md" data-reactid="54"><!-- react-text: 55 -->EDIT THIS PAGE  <!-- /react-text --><i class="fa fa-edit" data-reactid="56"></i></a><div class="markdown" data-reactid="57"><h1 data-reactid="58">Raspberry Pi Setup Guide</h1><div data-reactid="59"><p>We recommend that you use a <a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b/">Raspberry Pi 3</a> or <a href="https://www.raspberrypi.org/products/raspberry-pi-2-model-b/">Raspberry Pi 2</a> because of the performance requirements of the Node.js application. If you a buying a raspberry pi, <a href="https://www.amazon.com/Raspberry-Pi-RASP-PI-3-Model-Motherboard/dp/B01CD5VC92">buy a Raspberry Pi 3</a> or latest model.</p>
+ <html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Raspberry Pi Setup Guide | cncjs</title><meta name="description" content=""/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:87.5%/1.5em -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-weight:normal;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.618rem;line-height:2.25rem;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.33471rem;line-height:2.25rem;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.21225rem;line-height:1.5rem;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.5rem;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.90825rem;line-height:1.5rem;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.86558rem;line-height:1.5rem;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}ul{margin-left:1.5rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.5rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;font-size:0.85rem;line-height:1.42;background:hsla(0,0%,0%,0.04);border-radius:3px;overflow:auto;word-wrap:normal;padding:1.5rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;font-size:1rem;line-height:1.5rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}blockquote{margin-left:1.5rem;margin-right:1.5rem;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.5rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}b{font-weight:bold;}strong{font-weight:bold;}dt{font-weight:bold;}th{font-weight:bold;}li{margin-bottom:calc(1.5rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.5rem;margin-bottom:calc(1.5rem / 2);margin-top:calc(1.5rem / 2);}li > ul{margin-left:1.5rem;margin-bottom:calc(1.5rem / 2);margin-top:calc(1.5rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.5rem / 2);}code{font-size:0.85rem;line-height:1.5rem;}kbd{font-size:0.85rem;line-height:1.5rem;}samp{font-size:0.85rem;line-height:1.5rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:tnum;-moz-font-feature-settings:tnum;-ms-font-feature-settings:tnum;-webkit-font-feature-settings:tnum;padding-left:1rem;padding-right:1rem;padding-top:0.75rem;padding-bottom:calc(0.75rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}tt,code{background-color:hsla(0,0%,0%,0.04);border-radius:3px;font-family:"SFMono-Regular", Consolas,"Roboto Mono","Droid Sans Mono","Liberation Mono",Menlo,Courier,monospace;padding:0;padding-top:0.2em;padding-bottom:0.2em;}pre code{background:none;line-height:1.42;}code:before,code:after,tt:before,tt:after{letter-spacing:-0.2em;content:" ";}pre code:before,pre code:after,pre tt:before,pre tt:after{content:"";}</style><style>.github-btn{font:700 11px/14px Helvetica Neue,Helvetica,Arial,sans-serif;height:20px;overflow:hidden}.gh-btn,.gh-count,.gh-ico{float:left}.gh-btn,.gh-count{padding:2px 5px 2px 4px;color:#333;text-decoration:none;white-space:nowrap;cursor:pointer;border-radius:3px}.gh-btn{background-color:#eee;background-image:linear-gradient(180deg,#fcfcfc 0,#eee);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#fcfcfc",endColorstr="#eeeeee",GradientType=0);background-repeat:no-repeat;border:1px solid #d5d5d5}.gh-btn:focus,.gh-btn:hover{text-decoration:none;background-color:#ddd;background-image:linear-gradient(180deg,#eee 0,#ddd);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeeeee",endColorstr="#dddddd",GradientType=0);border-color:#ccc}.gh-btn:active{background-image:none;background-color:#dcdcdc;border-color:#b5b5b5;box-shadow:inset 0 2px 4px rgba(0,0,0,.15)}.gh-ico{width:14px;height:14px;margin-right:4px;background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjQwcHgiIGhlaWdodD0iNDBweCIgdmlld0JveD0iMTIgMTIgNDAgNDAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMTIgMTIgNDAgNDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiMzMzMzMzMiIGQ9Ik0zMiAxMy40Yy0xMC41IDAtMTkgOC41LTE5IDE5YzAgOC40IDUuNSAxNS41IDEzIDE4YzEgMC4yIDEuMy0wLjQgMS4zLTAuOWMwLTAuNSAwLTEuNyAwLTMuMiBjLTUuMyAxLjEtNi40LTIuNi02LjQtMi42QzIwIDQxLjYgMTguOCA0MSAxOC44IDQxYy0xLjctMS4yIDAuMS0xLjEgMC4xLTEuMWMxLjkgMC4xIDIuOSAyIDIuOSAyYzEuNyAyLjkgNC41IDIuMSA1LjUgMS42IGMwLjItMS4yIDAuNy0yLjEgMS4yLTIuNmMtNC4yLTAuNS04LjctMi4xLTguNy05LjRjMC0yLjEgMC43LTMuNyAyLTUuMWMtMC4yLTAuNS0wLjgtMi40IDAuMi01YzAgMCAxLjYtMC41IDUuMiAyIGMxLjUtMC40IDMuMS0wLjcgNC44LTAuN2MxLjYgMCAzLjMgMC4yIDQuNyAwLjdjMy42LTIuNCA1LjItMiA1LjItMmMxIDIuNiAwLjQgNC42IDAuMiA1YzEuMiAxLjMgMiAzIDIgNS4xYzAgNy4zLTQuNSA4LjktOC43IDkuNCBjMC43IDAuNiAxLjMgMS43IDEuMyAzLjVjMCAyLjYgMCA0LjYgMCA1LjJjMCAwLjUgMC40IDEuMSAxLjMgMC45YzcuNS0yLjYgMTMtOS43IDEzLTE4LjFDNTEgMjEuOSA0Mi41IDEzLjQgMzIgMTMuNHoiLz48L3N2Zz4=");background-size:100% 100%;background-repeat:no-repeat}.gh-count{position:relative;display:none;margin-left:4px;background-color:#fafafa;border:1px solid #d4d4d4}.gh-count:focus,.gh-count:hover{color:#4183c4}.gh-count:after,.gh-count:before{content:"";position:absolute;display:inline-block;width:0;height:0;border-color:transparent;border-style:solid}.gh-count:before{top:50%;left:-3px;margin-top:-4px;border-width:4px 4px 4px 0;border-right-color:#fafafa}.gh-count:after{top:50%;left:-4px;z-index:-1;margin-top:-5px;border-width:5px 5px 5px 0;border-right-color:#d4d4d4}.github-btn-large{height:30px}.github-btn-large .gh-btn,.github-btn-large .gh-count{padding:3px 10px 3px 8px;font-size:16px;line-height:22px;border-radius:4px}.github-btn-large .gh-ico{width:20px;height:20px}.github-btn-large .gh-count{margin-left:6px}.github-btn-large .gh-count:before{left:-5px;margin-top:-6px;border-width:6px 6px 6px 0}.github-btn-large .gh-count:after{left:-6px;margin-top:-7px;border-width:7px 7px 7px 0}.nav>li,img{margin-bottom:0}.hljs-comment,.hljs-quote{color:#998;font-style:italic}.hljs-keyword,.hljs-selector-tag,.hljs-subst{color:#333;font-weight:700}.hljs-literal,.hljs-number,.hljs-tag .hljs-attr,.hljs-template-variable,.hljs-variable{color:teal}.hljs-doctag,.hljs-string{color:#d14}.hljs-section,.hljs-selector-id,.hljs-title{color:#900;font-weight:700}.hljs-subst{font-weight:400}.hljs-class .hljs-title,.hljs-type{color:#458;font-weight:700}.hljs-attribute,.hljs-name,.hljs-tag{color:navy;font-weight:400}.hljs-link,.hljs-regexp{color:#009926}.hljs-bullet,.hljs-symbol{color:#990073}.hljs-built_in,.hljs-builtin-name{color:#0086b3}.hljs-meta{color:#999;font-weight:700}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}.page__edit{display:none}@media (min-width:768px){.page__edit{position:absolute;display:block;top:0;right:1.5em;font-size:13px;text-transform:uppercase}.page__edit:focus,.page__edit:hover{text-decoration:none}.page__edit i{font-size:13px}}@media only screen and (min-width:700px){.breakpoint-min-width-700{display:block}.breakpoint-max-width-700{display:none}}@media only screen and (max-width:700px){.breakpoint-min-width-700{display:none}.breakpoint-max-width-700{display:block}}._2Len9LGxtUJ6nVK4VzO8nr{padding:6px}._24UGgNoPpqYOYWy78Y7-7L{display:-ms-inline-flexbox;display:inline-flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-align:center;align-items:center;margin-right:1em;font-size:14px}._24UGgNoPpqYOYWy78Y7-7L img{height:45px;width:45px;border-radius:50%;box-shadow:0 0 2px rgba(0,0,0,.3)}._24UGgNoPpqYOYWy78Y7-7L ._3P40Ju0MfFBTDmTFbL4-zM{color:#465e69;margin-top:-6px;box-shadow:0 0 2px rgba(0,0,0,.3);line-height:1.4;transition:color .1s;padding:0 6px;border-radius:2px;background:hsla(0,0%,100%,.95)}._24UGgNoPpqYOYWy78Y7-7L:hover ._3P40Ju0MfFBTDmTFbL4-zM{color:#2086d7}</style></head><body><div id="react-mount"><div data-reactroot="" data-reactid="1" data-react-checksum="1359650710"><nav class="navbar navbar-inverse" style="border-radius:0;" data-reactid="2"><div class="container" data-reactid="3"><div class="navbar-header" data-reactid="4"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-reactid="5"><span class="sr-only" data-reactid="6">Toggle navigation</span><span class="icon-bar" data-reactid="7"></span><span class="icon-bar" data-reactid="8"></span><span class="icon-bar" data-reactid="9"></span></button><a class="navbar-brand" href="/" style="font-size:24px;padding:5px 0 5px 15px;" data-reactid="10"><img alt="brand" src="/logo.png" style="display:inline-block;width:40px;height:40px;margin-right:8px;" data-reactid="11"/></a></div><div class="collapse navbar-collapse" data-reactid="12"><div class="nav navbar-right" data-reactid="13"><ul class="nav navbar-nav navbar-right" data-reactid="14"><li class="active" data-reactid="15"><a href="/docs/" data-reactid="16">Documentation</a></li><li class="" data-reactid="17"><a href="/projects/" data-reactid="18">Projects</a></li><li data-reactid="19"><div style="padding:15px;height:50px;" data-reactid="20"><span class="github-btn" data-reactid="21"><a class="gh-btn" href="//github.com/cncjs/cncjs/" target="_blank" data-reactid="22"><span class="gh-ico" aria-hidden="true" data-reactid="23"></span><span class="gh-text" data-reactid="24">Star</span></a><a class="gh-count" target="_blank" href="//github.com/cncjs/cncjs/stargazers/" data-reactid="25"></a></span></div></li></ul></div></div></div></nav><div class="container" style="position:relative;" data-reactid="26"><a class="page__edit" href="https://github.com/cncjs/cncjs.org/edit/master/pages/docs/rpi-setup-guide/index.md" data-reactid="27"><!-- react-text: 28 -->EDIT THIS PAGE  <!-- /react-text --><i class="fa fa-edit" data-reactid="29"></i></a><div data-reactid="30"><div class="breakpoint-min-width-700" data-reactid="31"><div style="overflow-y:auto;padding-right:calc(0.75rem - 1px);position:absolute;width:calc(12rem - 1px);border-right:1px solid lightgrey;" data-reactid="32"><ul style="list-style:none;margin-left:0;margin-top:0.75rem;" data-reactid="33"><li style="margin-bottom:0.75rem;" data-reactid="34"><a style="text-decoration:none;" href="/docs/" data-reactid="35">Introduction</a></li><li style="margin-bottom:0.75rem;" data-reactid="36"><a style="text-decoration:none;" href="/docs/installation/" data-reactid="37">Installation</a></li><li style="margin-bottom:0.75rem;" data-reactid="38"><a style="text-decoration:none;" href="/docs/rpi-setup-guide/" data-reactid="39"><strong data-reactid="40">Raspberry Pi Setup Guide</strong></a></li><li style="margin-bottom:0.75rem;" data-reactid="41"><a style="text-decoration:none;" href="/docs/desktop-app/" data-reactid="42">Desktop App</a></li><li style="margin-bottom:0.75rem;" data-reactid="43"><a style="text-decoration:none;" href="/docs/user-guide/" data-reactid="44">User Guide</a></li><li style="margin-bottom:0.75rem;" data-reactid="45"><a style="text-decoration:none;" href="/docs/troubleshooting/" data-reactid="46">Troubleshooting</a></li><li style="margin-bottom:0.75rem;" data-reactid="47"><a style="text-decoration:none;" href="/docs/faq/" data-reactid="48">FAQ</a></li><li style="margin-bottom:0.75rem;" data-reactid="49"><a style="text-decoration:none;" href="/docs/resources/" data-reactid="50">Resources</a></li><li style="margin-bottom:0.75rem;" data-reactid="51"><a style="text-decoration:none;" href="/docs/about/" data-reactid="52">About</a></li></ul></div><div style="padding:0 1.5rem;padding-left:calc(12rem + 1.5rem);" data-reactid="53"><a class="page__edit" href="https://github.com/cncjs/cncjs.org/edit/master/pages/docs/rpi-setup-guide/index.md" data-reactid="54"><!-- react-text: 55 -->EDIT THIS PAGE  <!-- /react-text --><i class="fa fa-edit" data-reactid="56"></i></a><div class="markdown" data-reactid="57"><h1 data-reactid="58">Raspberry Pi Setup Guide</h1><div data-reactid="59"><h1 id="raspberry-pi-setup-guide">Raspberry Pi Setup Guide</h1>
+<p>We recommend that you use a <a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b/">Raspberry Pi 3</a> or <a href="https://www.raspberrypi.org/products/raspberry-pi-2-model-b/">Raspberry Pi 2</a> because of the performance requirements of the Node.js application. If you a buying a raspberry pi, <a href="https://www.amazon.com/Raspberry-Pi-RASP-PI-3-Model-Motherboard/dp/B01CD5VC92">buy a Raspberry Pi 3</a> or latest model.</p>
 <h4 id="recommed-software-for-a-full-web-capatable-cnc-software-stack">Recommed Software (for a full web capatable CNC software stack):</h4>
 <ul>
 <li><a href="http://jscut.org/jscut.html">jscut</a> (converts SVG files to CNC cutting paths)</li>
@@ -51,9 +52,8 @@ sudo apt-<span class="hljs-keyword">get</span> install htop iotop nmon lsof scre
 <hr>
 <h3 id="install-nodejs-via-package-manager"><a href="https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions">Install Node.js via Package Manager</a></h3>
 <pre><code># Install Node.js via Package Manager &amp; Add Package Source
-#curl -sL https:<span class="hljs-comment">//deb.nodesource.com/setup_4.x | sudo -E bash -  # Install NodeJS v4</span>
-curl -sL https:<span class="hljs-comment">//deb.nodesource.com/setup_7.x | sudo -E bash -  # Install NodeJS v7</span>
-sudo apt-get install -y nodejs  # npm nodejs-legacy #(Installed <span class="hljs-keyword">with</span> nodesource)
+curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -  # Install NodeJS v7
+sudo apt-get install -y nodejs  # npm nodejs-legacy <span class="hljs-function"><span class="hljs-keyword">#</span><span class="hljs-params">(<span class="hljs-variable">Installed</span> <span class="hljs-variable">with</span> <span class="hljs-variable">nodesource</span>)</span></span>
 </code></pre>
 <h3 id="update-node-package-manager-npm">Update Node Package Manager (NPM)</h3>
 <pre><code><span class="hljs-comment"># Update Node Package Manager (NPM)</span>
@@ -65,25 +65,32 @@ echo <span class="hljs-string">"[NPM] ============"</span>; <span class="hljs-at
 </code></pre>
 <p><s>### Install Node.JS Serial Port application first (OPTIONAL)
 <code>npm install serialport</code></s></p>
-<h3 id="install-cncjs">Install CNC.js</h3>
-<p><code>sudo npm install -g cncjs --unsafe-perm</code></p>
+<h3 id="install-cncjs">Install CNCjs</h3>
+<pre><code><span class="hljs-meta"># Install Latest Release Version of CNCjs</span>
+sudo npm install -g cncjs@latest --unsafe-perm
+
+<span class="hljs-meta"># --- OR ----</span>
+
+<span class="hljs-meta"># Install Specific Version of CNCjs</span>
+<span class="hljs-meta">#sudo npm install -g cncjs@v1.9.0-beta.1 --unsafe-perm  # Installs Specific Version based on TAG</span>
+</code></pre>
 <h3 id="install-production-process-manager-pm2">Install <a href="http://pm2.io">Production Process Manager [PM2]</a></h3>
-<pre><code># Install PM2
+<pre><code><span class="hljs-comment"># Install PM2</span>
 sudo npm install -g pm2
 
-# Setup PM2 Startup Script
-# sudo pm2 startup  # To Start PM2 <span class="hljs-keyword">as</span> root
-pm2 startup  # To start PM2 <span class="hljs-keyword">as</span> pi / current user
-  #[PM2] You have to run this command <span class="hljs-keyword">as</span> root. Execute the following command:
-  sudo su -c <span class="hljs-string">"env PATH=$PATH:/usr/bin pm2 startup linux -u pi --hp /home/pi"</span>
+<span class="hljs-comment"># Setup PM2 Startup Script</span>
+<span class="hljs-comment"># sudo pm2 startup  # To Start PM2 as root</span>
+pm2 startup  <span class="hljs-comment"># To start PM2 as pi / current user</span>
+  <span class="hljs-comment">#[PM2] You have to run this command as root. Execute the following command:</span>
+  sudo env PATH=$<span class="hljs-symbol">PATH:</span>/usr/bin /usr/<span class="hljs-class"><span class="hljs-keyword">lib</span>/<span class="hljs-title">node_modules</span>/<span class="hljs-title">pm2</span>/<span class="hljs-title">bin</span>/<span class="hljs-title">pm2</span> <span class="hljs-title">startup</span> <span class="hljs-title">systemd</span> -<span class="hljs-title">u</span> <span class="hljs-title">pi</span> --<span class="hljs-title">hp</span> /<span class="hljs-title">home</span>/<span class="hljs-title">pi</span></span>
 
-# Start CNC.js (on port <span class="hljs-number">8000</span>) <span class="hljs-keyword">with</span> PM2
-pm2 start $(which cnc) -- --port <span class="hljs-number">8000</span>
+<span class="hljs-comment"># Start CNCjs (on port 8000, /w Tinyweb mount point) with PM2</span>
+pm2 start $(which cncjs) -- --port <span class="hljs-number">8000</span> -m /<span class="hljs-symbol">tinyweb:</span>/home/pi/tinyweb
 
-# Set current running apps to startup
+<span class="hljs-comment"># Set current running apps to startup</span>
 pm2 save
 
-# Get list <span class="hljs-keyword">of</span> PM2 processes
+<span class="hljs-comment"># Get list of PM2 processes</span>
 pm2 list
 </code></pre>
 <h3 id="iptables-allow-access-to-port-8000-from-port-80">Iptables (allow access to port 8000 from port 80)</h3>
@@ -133,7 +140,7 @@ echo <span class="hljs-string">"[NODE] ============"</span>; <span class="hljs-a
 </code></pre>
 <p><s>### Install Node.JS Serial Port application first (OPTIONAL)
 <code>npm install serialport</code></s></p>
-<h3 id="install-cncjs-2">Install CNC.js</h3>
+<h3 id="install-cncjs-2">Install CNCjs</h3>
 <p><code>npm install -g cncjs</code></p>
 <h3 id="allow-access-to-port-8000-from-port-80">Allow access to port 8000 from port 80</h3>
 <pre><code><span class="hljs-meta"># Allow access to port 8000 from port 80</span>
@@ -155,21 +162,21 @@ sudo apt-<span class="hljs-keyword">get</span> install iptables-persistent -y
 </code></pre>
 <h2 id="auto-start-options">Auto Start Options</h2>
 <h3 id="install-production-process-manager-pm2-2">Install <a href="http://pm2.io">Production Process Manager [PM2]</a></h3>
-<pre><code><span class="hljs-comment"># Install Production Process Manager [PM2]</span>
+<pre><code><span class="hljs-meta"># Install Production Process Manager [PM2]</span>
 npm install pm2 -g
 
-<span class="hljs-comment"># Start CNC.js (on port 8000) with PM2</span>
-pm2 <span class="hljs-literal">start</span> /home/pi/.nvm/versions/<span class="hljs-keyword">node</span><span class="hljs-title">/v4</span>.<span class="hljs-number">5.0</span>/bin/cnc -- --port <span class="hljs-number">8000</span>
+<span class="hljs-meta"># Start CNCjs (on port 8000) with PM2</span>
+pm2 start $(which cncjs) -- --port <span class="hljs-number">8000</span>
 
-<span class="hljs-comment"># Setup PM2 Startup Script</span>
+<span class="hljs-meta"># Setup PM2 Startup Script</span>
 pm2 startup debian
-<span class="hljs-comment">#[PM2] You have to run this command as root. Execute the following command:</span>
+<span class="hljs-meta">#[PM2] You have to run this command as root. Execute the following command:</span>
 sudo su -c <span class="hljs-string">"env PATH=$PATH:/home/pi/.nvm/versions/node/v4.5.0/bin pm2 startup debian -u pi --hp /home/pi"</span>
 
-<span class="hljs-comment"># Set current running apps to startup</span>
+<span class="hljs-meta"># Set current running apps to startup</span>
 pm2 save
 
-<span class="hljs-comment"># Get list of PM2 processes</span>
+<span class="hljs-meta"># Get list of PM2 processes</span>
 pm2 list
 </code></pre>
 <h3 id="auto-start-on-boot-with-cron-alternative">Auto Start on Boot with cron (Alternative)</h3>
@@ -207,15 +214,16 @@ sudo apt-get upgrade -y  # Should also update Node.js <span class="hljs-keyword"
 echo <span class="hljs-string">"[NPM] ============"</span>; <span class="hljs-attribute">which</span> npm; <span class="hljs-attribute">npm</span> -v;
 <span class="hljs-attribute">echo</span> <span class="hljs-string">"[NODE] ============"</span>; <span class="hljs-attribute">which</span> node; <span class="hljs-attribute">node</span> -v
 </code></pre>
-<h3 id="update-cncjs">Update CNC.js</h3>
-<pre><code># Stop CNC.js <span class="hljs-keyword">in</span> PM2 
-pm2 stop cnc
+<h3 id="update-cncjs">Update CNCjs</h3>
+<pre><code><span class="hljs-comment"># Stop CNCjs in PM2 </span>
+pm2 <span class="hljs-literal">stop</span> cnc
 
-# Update CNC.js
-sudo npm update -g cncjs --unsafe-perm  # If fails, then reinstall CNC.js ( sudo npm uninstall -g cncjs; sudo npm install -g cncjs --unsafe-perm ) | https:<span class="hljs-comment">//github.com/cncjs/cncjs/issues/78</span>
+<span class="hljs-comment"># Update CNCjs</span>
+<span class="hljs-comment">#sudo npm update -g cncjs --unsafe-perm  #  Tends to fail to update CNCjs, so we will reinstall CNCjs will the command bellow (no settings will be lost)</span>
+sudo npm install -g cncjs --unsafe-perm  <span class="hljs-comment"># Install CNCjs again, if this fails or causes issue then run (sudo npm uninstall -g cncjs; sudo npm install -g cncjs --unsafe-perm )   https://github.com/cncjs/cncjs/issues/78</span>
 
-# Restart CNC.js <span class="hljs-keyword">in</span> PM2
-pm2 start cnc
+<span class="hljs-comment"># Restart CNCjs in PM2</span>
+pm2 <span class="hljs-literal">start</span> cnc
 </code></pre>
 <h3 id="update-production-process-manager-pm2"><a href="http://pm2.keymetrics.io/docs/usage/update-pm2/">Update Production Process Manager [PM2]</a></h3>
 <pre><code><span class="hljs-comment"># First make sure that you save all your processes:</span>
@@ -230,21 +238,25 @@ pm2 update
 <hr>
 <h1 id="tinyweb-console-for-320x240-lcd-display"><a href="https://github.com/cncjs/cncjs/wiki/User-Guide#tinyweb-console-for-320x240-lcd-display">TinyWeb Console for 320x240 LCD Display</a></h1>
 <pre><code><span class="hljs-meta"># Remove Older Downloads</span>
-rm *tinyweb.zip
+rm -r cncjs-pendant-tinyweb*
 
 <span class="hljs-meta"># Download TinyWeb Example</span>
 wget https:<span class="hljs-comment">//github.com/cncjs/cncjs-pendant-tinyweb/releases/download/latest/cncjs-pendant-tinyweb-1.0.0-613f598.zip</span>
 
-<span class="hljs-meta"># Extract Achieve</span>
-unzip *tinyweb.zip -d /home/<span class="hljs-built_in">pi</span>/
+<span class="hljs-meta"># Extract Archive &amp; Delete</span>
+unzip cncjs-pendant-tinyweb*.zip -d /home/<span class="hljs-built_in">pi</span>/
+rm -r cncjs-pendant-tinyweb*.zip
 
-<span class="hljs-meta"># How-to Start CNC.js w/ mounted TinyWeb</span>
-<span class="hljs-meta">#cnc -m /tinyweb:/home/pi/tinyweb</span>
+<span class="hljs-meta"># Move / Rename Tinyweb Directory</span>
+mv /home/<span class="hljs-built_in">pi</span>/cncjs-pendant-tinyweb* /home/<span class="hljs-built_in">pi</span>/tinyweb
 
-<span class="hljs-meta"># Start CNC.js (on port 8000) with PM2 w/ mounted TinyWeb</span>
-pm2 <span class="hljs-keyword">stop</span> cnc  <span class="hljs-meta"># stop pervious instance</span>
-pm2 <span class="hljs-keyword">delete</span> cnc  <span class="hljs-meta"># delete pervious instance</span>
-pm2 start $(which cnc) -- --port <span class="hljs-number">8000</span> -m /tinyweb:/home/<span class="hljs-built_in">pi</span>/tinyweb
+<span class="hljs-meta"># How-to Start CNCjs w/ mounted TinyWeb</span>
+cncjs -m /tinyweb:/home/<span class="hljs-built_in">pi</span>/tinyweb
+
+<span class="hljs-meta"># Start CNCjs (on port 8000, /w Tinyweb) with PM2</span>
+pm2 <span class="hljs-keyword">stop</span> cncjs  <span class="hljs-meta"># stop pervious instance</span>
+pm2 <span class="hljs-keyword">delete</span> cnsjc  <span class="hljs-meta"># delete pervious instance</span>
+pm2 start $(which cncjs) -- --port <span class="hljs-number">8000</span> -m /tinyweb:/home/<span class="hljs-built_in">pi</span>/tinyweb
 pm2 <span class="hljs-keyword">save</span> <span class="hljs-meta"># Set current running apps to startup</span>
 </code></pre>
 <hr>
@@ -281,6 +293,218 @@ sudo ifup wlan0
 
 <span class="hljs-comment"># Check Interface for IP</span>
 ifconfig wlan0
+</code></pre>
+<hr>
+<h1 id="mjpeg-streamer-install-setup">MJPEG-Streamer Install &amp; Setup</h1>
+<ul>
+<li><a href="https://github.com/jacksonliam/mjpg-streamer">https://github.com/jacksonliam/mjpg-streamer</a></li>
+<li><a href="http://raspberrypi.stackexchange.com/questions/36734/compile-mjpg-streamer-error">http://raspberrypi.stackexchange.com/questions/36734/compile-mjpg-streamer-error</a></li>
+</ul>
+<pre><code><span class="hljs-meta"># Update &amp; Install Tools</span>
+sudo apt-<span class="hljs-keyword">get</span> update
+sudo apt-<span class="hljs-keyword">get</span> upgrade -y
+sudo apt-<span class="hljs-keyword">get</span> install build-essential libjpeg8-dev imagemagick libv4l-dev cmake -y
+
+<span class="hljs-meta"># Clone Repo in /tmp</span>
+cd /tmp
+git clone https:<span class="hljs-comment">//github.com/jacksonliam/mjpg-streamer.git</span>
+cd mjpg-streamer/mjpg-streamer-experimental
+
+<span class="hljs-meta"># Make</span>
+make
+sudo make install
+
+<span class="hljs-meta"># Run</span>
+/usr/local/bin/mjpg_streamer -i <span class="hljs-string">"input_uvc.so -r 1280x720 -d /dev/video0 -f 30 -q 80"</span> -o <span class="hljs-string">"output_http.so -p 8080 -w /usr/local/share/mjpg-streamer/www"</span>
+</code></pre>
+<h1 id="mjpeg-streamer-auto-start">MJPEG-Streamer Auto Start</h1>
+<h2 id="manager-script">Manager Script</h2>
+<pre><code>nano /home/pi/mjpg-streamer<span class="hljs-selector-class">.sh</span>
+</code></pre>
+<p>Add the below code to ( /home/pi/mjpg-streamer.sh )</p>
+<pre><code><span class="hljs-meta">#!/bin/bash</span>
+<span class="hljs-comment"># chmod +x mjpg-streamer.sh</span>
+<span class="hljs-comment"># Crontab: @reboot /home/pi/mjpg-streamer.sh start</span>
+
+MJPG_STREAMER_BIN=<span class="hljs-string">"/usr/local/bin/mjpg_streamer"</span> <span class="hljs-comment"># "$(dirname $0)/mjpg_streamer"</span>
+MJPG_STREAMER_WWW=<span class="hljs-string">"/usr/local/share/mjpg-streamer/www"</span>
+MJPG_STREAMER_LOG_FILE=<span class="hljs-string">"<span class="hljs-variable">$(dirname $0)</span>/mjpg-streamer.log"</span>
+RUNNING_CHECK_INTERVAL=<span class="hljs-string">"2"</span> <span class="hljs-comment"># how often to check to make sure the server is running (in seconds)</span>
+HANGING_CHECK_INTERVAL=<span class="hljs-string">"3"</span> <span class="hljs-comment"># how often to check to make sure the server is not hanging (in seconds)</span>
+
+VIDEO_DEV=<span class="hljs-string">"/dev/video0"</span>
+FRAME_RATE=<span class="hljs-string">"30"</span>
+QUALITY=<span class="hljs-string">"60"</span>
+RESOLUTION=<span class="hljs-string">"VGA"</span>  <span class="hljs-comment"># 1920x1080, 1280x720, 640x480 (VGA, SVGA), 176x144, 160x120, 352x288, 320x240 (QVGA)</span>
+PORT=<span class="hljs-string">"8080"</span>
+YUV=<span class="hljs-string">"yes"</span>
+
+INPUT_OPTIONS=<span class="hljs-string">"-r <span class="hljs-variable">${RESOLUTION}</span> -d <span class="hljs-variable">${VIDEO_DEV}</span> -f <span class="hljs-variable">${FRAME_RATE}</span> -q <span class="hljs-variable">${QUALITY}</span>"</span>
+<span class="hljs-keyword">if</span> [ <span class="hljs-string">"<span class="hljs-variable">${YUV}</span>"</span> == <span class="hljs-string">"true"</span> ]; <span class="hljs-keyword">then</span>
+	INPUT_OPTIONS+=<span class="hljs-string">" -y"</span>
+<span class="hljs-keyword">fi</span>
+
+OUTPUT_OPTIONS=<span class="hljs-string">"-p <span class="hljs-variable">${PORT}</span> -w <span class="hljs-variable">${MJPG_STREAMER_WWW}</span>"</span>
+
+<span class="hljs-comment"># ==========================================================</span>
+<span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">running</span></span>() {
+    <span class="hljs-keyword">if</span> ps aux | grep <span class="hljs-variable">${MJPG_STREAMER_BIN}</span> | grep <span class="hljs-variable">${VIDEO_DEV}</span> &gt;/dev/null 2&gt;&amp;1; <span class="hljs-keyword">then</span>
+        <span class="hljs-built_in">return</span> 0
+
+    <span class="hljs-keyword">else</span>
+        <span class="hljs-built_in">return</span> 1
+
+    <span class="hljs-keyword">fi</span>
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">start</span></span>() {
+    <span class="hljs-keyword">if</span> running; <span class="hljs-keyword">then</span>
+        <span class="hljs-built_in">echo</span> <span class="hljs-string">"already started"</span>
+        <span class="hljs-built_in">return</span> 1
+    <span class="hljs-keyword">fi</span>
+
+    <span class="hljs-built_in">export</span> LD_LIBRARY_PATH=<span class="hljs-string">"<span class="hljs-variable">$(dirname $MJPG_STREAMER_BIN)</span>:."</span>
+
+	<span class="hljs-built_in">echo</span> <span class="hljs-string">"Starting:  <span class="hljs-variable">${MJPG_STREAMER_BIN}</span> -i \"input_uvc.so <span class="hljs-variable">${INPUT_OPTIONS}</span>\" -o \"output_http.so <span class="hljs-variable">${OUTPUT_OPTIONS}</span>\""</span>
+    <span class="hljs-variable">${MJPG_STREAMER_BIN}</span> -i <span class="hljs-string">"input_uvc.so <span class="hljs-variable">${INPUT_OPTIONS}</span>"</span> -o <span class="hljs-string">"output_http.so <span class="hljs-variable">${OUTPUT_OPTIONS}</span>"</span> &gt;&gt; <span class="hljs-variable">${MJPG_STREAMER_LOG_FILE}</span> 2&gt;&amp;1 &amp;
+
+    sleep 1
+
+    <span class="hljs-keyword">if</span> running; <span class="hljs-keyword">then</span>
+        <span class="hljs-keyword">if</span> [ <span class="hljs-string">"<span class="hljs-variable">$1</span>"</span> != <span class="hljs-string">"nocheck"</span> ]; <span class="hljs-keyword">then</span>
+            check_running &amp; &gt; /dev/null 2&gt;&amp;1 <span class="hljs-comment"># start the running checking task</span>
+            check_hanging &amp; &gt; /dev/null 2&gt;&amp;1 <span class="hljs-comment"># start the hanging checking task</span>
+        <span class="hljs-keyword">fi</span>
+
+        <span class="hljs-built_in">echo</span> <span class="hljs-string">"started"</span>
+        <span class="hljs-built_in">return</span> 0
+
+    <span class="hljs-keyword">else</span>
+        <span class="hljs-built_in">echo</span> <span class="hljs-string">"failed to start"</span>
+        <span class="hljs-built_in">return</span> 1
+
+    <span class="hljs-keyword">fi</span>
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">stop</span></span>() {
+    <span class="hljs-keyword">if</span> ! running; <span class="hljs-keyword">then</span>
+        <span class="hljs-built_in">echo</span> <span class="hljs-string">"not running"</span>
+        <span class="hljs-built_in">return</span> 1
+    <span class="hljs-keyword">fi</span>
+
+    own_pid=$$
+
+    <span class="hljs-keyword">if</span> [ <span class="hljs-string">"<span class="hljs-variable">$1</span>"</span> != <span class="hljs-string">"nocheck"</span> ]; <span class="hljs-keyword">then</span>
+        <span class="hljs-comment"># stop the script running check task</span>
+        ps aux | grep <span class="hljs-variable">$0</span> | grep start | tr <span class="hljs-_">-s</span> <span class="hljs-string">' '</span> | cut <span class="hljs-_">-d</span> <span class="hljs-string">' '</span> <span class="hljs-_">-f</span> 2 | grep -v <span class="hljs-variable">${own_pid}</span> | xargs -r <span class="hljs-built_in">kill</span>
+        sleep 0.5
+    <span class="hljs-keyword">fi</span>
+
+    <span class="hljs-comment"># stop the server</span>
+    ps aux | grep <span class="hljs-variable">${MJPG_STREAMER_BIN}</span> | grep <span class="hljs-variable">${VIDEO_DEV}</span> | tr <span class="hljs-_">-s</span> <span class="hljs-string">' '</span> | cut <span class="hljs-_">-d</span> <span class="hljs-string">' '</span> <span class="hljs-_">-f</span> 2 | grep -v <span class="hljs-variable">${own_pid}</span> | xargs -r <span class="hljs-built_in">kill</span>
+
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">"stopped"</span>
+    <span class="hljs-built_in">return</span> 0
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">check_running</span></span>() {
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">"starting running check task"</span> &gt;&gt; <span class="hljs-variable">${MJPG_STREAMER_LOG_FILE}</span>
+
+    <span class="hljs-keyword">while</span> <span class="hljs-literal">true</span>; <span class="hljs-keyword">do</span>
+        sleep <span class="hljs-variable">${RUNNING_CHECK_INTERVAL}</span>
+
+        <span class="hljs-keyword">if</span> ! running; <span class="hljs-keyword">then</span>
+            <span class="hljs-built_in">echo</span> <span class="hljs-string">"server stopped, starting"</span> &gt;&gt; <span class="hljs-variable">${MJPG_STREAMER_LOG_FILE}</span>
+            start nocheck
+        <span class="hljs-keyword">fi</span>
+    <span class="hljs-keyword">done</span>
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">check_hanging</span></span>() {
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">"starting hanging check task"</span> &gt;&gt; <span class="hljs-variable">${MJPG_STREAMER_LOG_FILE}</span>
+
+    <span class="hljs-keyword">while</span> <span class="hljs-literal">true</span>; <span class="hljs-keyword">do</span>
+        sleep <span class="hljs-variable">${HANGING_CHECK_INTERVAL}</span>
+
+        <span class="hljs-comment"># treat the "error grabbing frames" case</span>
+        <span class="hljs-keyword">if</span> tail -n2 <span class="hljs-variable">${MJPG_STREAMER_LOG_FILE}</span> | grep -i <span class="hljs-string">"error grabbing frames"</span> &gt; /dev/null; <span class="hljs-keyword">then</span>
+            <span class="hljs-built_in">echo</span> <span class="hljs-string">"server is hanging, killing"</span> &gt;&gt; <span class="hljs-variable">${MJPG_STREAMER_LOG_FILE}</span>
+            stop nocheck
+        <span class="hljs-keyword">fi</span>
+    <span class="hljs-keyword">done</span>
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">help</span></span>() {
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">"Usage: <span class="hljs-variable">$0</span> [start|stop|restart|status]"</span>
+    <span class="hljs-built_in">return</span> 0
+}
+
+<span class="hljs-keyword">if</span> [ <span class="hljs-string">"<span class="hljs-variable">$1</span>"</span> == <span class="hljs-string">"start"</span> ]; <span class="hljs-keyword">then</span>
+    start &amp;&amp; <span class="hljs-built_in">exit</span> 0 || <span class="hljs-built_in">exit</span> -1
+
+<span class="hljs-keyword">elif</span> [ <span class="hljs-string">"<span class="hljs-variable">$1</span>"</span> == <span class="hljs-string">"stop"</span> ]; <span class="hljs-keyword">then</span>
+    stop &amp;&amp; <span class="hljs-built_in">exit</span> 0 || <span class="hljs-built_in">exit</span> -1
+
+<span class="hljs-keyword">elif</span> [ <span class="hljs-string">"<span class="hljs-variable">$1</span>"</span> == <span class="hljs-string">"restart"</span> ]; <span class="hljs-keyword">then</span>
+    stop &amp;&amp; sleep 1
+    start &amp;&amp; <span class="hljs-built_in">exit</span> 0 || <span class="hljs-built_in">exit</span> -1
+
+<span class="hljs-keyword">elif</span> [ <span class="hljs-string">"<span class="hljs-variable">$1</span>"</span> == <span class="hljs-string">"status"</span> ]; <span class="hljs-keyword">then</span>
+    <span class="hljs-keyword">if</span> running; <span class="hljs-keyword">then</span>
+        <span class="hljs-built_in">echo</span> <span class="hljs-string">"running"</span>
+        <span class="hljs-built_in">exit</span> 0
+
+    <span class="hljs-keyword">else</span>
+        <span class="hljs-built_in">echo</span> <span class="hljs-string">"stopped"</span>
+        <span class="hljs-built_in">exit</span> 1
+
+    <span class="hljs-keyword">fi</span>
+
+<span class="hljs-keyword">else</span>
+    <span class="hljs-built_in">help</span>
+
+<span class="hljs-keyword">fi</span>
+</code></pre>
+<h2 id="start-on-boot">Start on Boot</h2>
+<pre><code><span class="hljs-comment"># Make Executable</span>
+chmod +x /home/<span class="hljs-literal">pi</span>/mjpg-streamer.sh
+
+<span class="hljs-comment"># Open Cron Job</span>
+crontab -<span class="hljs-literal">e</span>
+
+<span class="hljs-comment"># Add line</span>
+<span class="hljs-meta">@reboot</span> /home/<span class="hljs-literal">pi</span>/mjpg-streamer.sh start
+</code></pre>
+<hr>
+<h1 id="ffmpeg">FFMpeg</h1>
+<p><a href="http://www.jeffreythompson.org/blog/2014/11/13/installing-ffmpeg-for-raspberry-pi/">http://www.jeffreythompson.org/blog/2014/11/13/installing-ffmpeg-for-raspberry-pi/</a></p>
+<pre><code><span class="hljs-meta"># Run as Sudo</span>
+sudo -i
+
+<span class="hljs-meta"># INSTALL H264 SUPPORT</span>
+cd /usr/src
+git clone git:<span class="hljs-comment">//git.videolan.org/x264</span>
+cd x264
+./configure --host=arm-unknown-linux-gnueabi --<span class="hljs-keyword">enable</span>-static --<span class="hljs-keyword">disable</span>-opencl
+<span class="hljs-built_in">make</span>
+sudo <span class="hljs-built_in">make</span> install
+
+<span class="hljs-meta"># INSTALL FFMPEG (This may take a REALLY long time, so be patient.)</span>
+cd /usr/src
+git clone https:<span class="hljs-comment">//github.com/FFmpeg/FFmpeg.git</span>
+cd FFmpeg
+sudo ./configure --arch=armel --target-os=linux --<span class="hljs-keyword">enable</span>-gpl --<span class="hljs-keyword">enable</span>-libx264 --<span class="hljs-keyword">enable</span>-nonfree
+<span class="hljs-built_in">make</span>
+sudo <span class="hljs-built_in">make</span> install
+</code></pre>
+<h1 id="recored-stream-w-ffmpeg">Recored Stream w/ ffmpeg</h1>
+<pre><code><span class="hljs-comment"># [Varables]</span>
+source_stram=<span class="hljs-string">"http://xcarve:8080/?action=stream"</span>
+destination_directory=<span class="hljs-string">"/home/pi/Videos"</span>
+destination_file=<span class="hljs-string">"xcarve-recording_$(date +'%Y%m%d_%H%M%S').mpeg"</span>
+
+<span class="hljs-comment"># Recored Stream w/ ffmpeg</span>
+ffmpeg -i <span class="hljs-string">"<span class="hljs-subst">${source_stram}</span>"</span> <span class="hljs-string">"<span class="hljs-subst">${destination_directory}</span>/<span class="hljs-subst">${destination_file}</span>"</span>
 </code></pre>
 <hr>
 <h1 id="raspberry-pi-shutdown-button-led-script"><a href="https://twitter.com/AustinStAubin/status/798058374059335680">Raspberry Pi Shutdown Button &amp; LED Script</a></h1>
@@ -358,6 +582,9 @@ gpio.setup(led_pin, gpio.OUT, initial=<span class="hljs-number">1</span>)
 
 loop() <span class="hljs-comment"># Run the loop function to keep script running</span>
 </code></pre>
+<h2 id="set-to-executable">Set to Executable</h2>
+<pre><code>sudo chmod +x  /root/shutdown_button_pi<span class="hljs-selector-class">.py</span>
+</code></pre>
 <h2 id="run-script-test">Run Script &amp; Test</h2>
 <p><code>sudo python3 /root/shutdown_button_pi.py</code></p>
 <h2 id="autostart-script">Autostart Script</h2>
@@ -367,7 +594,8 @@ sudo crontab -e
 <span class="hljs-meta"># Now, enter the line:</span>
 @reboot sudo <span class="hljs-meta-keyword">/usr/</span>bin/python3 <span class="hljs-meta-keyword">/root/</span>shutdown_button_pi.py &gt; <span class="hljs-meta-keyword">/root/</span>shutdown_button_pi.log <span class="hljs-number">2</span>&gt;<span class="hljs-variable">&amp;1</span>
 </code></pre>
-</div></div><div data-reactid="60"><hr data-reactid="61"/><h3 data-reactid="62">Contributors</h3><div class="lCzH_a_zk_4vhvhjwNe7c" data-reactid="63"><div class="_2Len9LGxtUJ6nVK4VzO8nr" data-reactid="64"><a class="_24UGgNoPpqYOYWy78Y7-7L" href="https://github.com/AustinSaintAubin" data-reactid="65"><img src="https://github.com/AustinSaintAubin.png?size=90" data-reactid="66"/><span class="_3P40Ju0MfFBTDmTFbL4-zM" data-reactid="67"><!-- react-text: 68 --> <!-- /react-text --><!-- react-text: 69 -->AustinSaintAubin<!-- /react-text --></span></a></div></div></div></div></div><div class="breakpoint-max-width-700" data-reactid="70"><strong data-reactid="71">Topics:</strong><!-- react-text: 72 --> <!-- /react-text --><select data-reactid="73"><option value="/docs/" data-reactid="74">Introduction</option><option value="/docs/installation/" data-reactid="75">Installation</option><option selected="" value="/docs/rpi-setup-guide/" data-reactid="76">Raspberry Pi Setup Guide</option><option value="/docs/desktop-app/" data-reactid="77">Desktop App</option><option value="/docs/user-guide/" data-reactid="78">User Guide</option><option value="/docs/troubleshooting/" data-reactid="79">Troubleshooting</option><option value="/docs/faq/" data-reactid="80">FAQ</option><option value="/docs/resources/" data-reactid="81">Resources</option><option value="/docs/about/" data-reactid="82">About</option></select><br data-reactid="83"/><br data-reactid="84"/><div class="markdown" data-reactid="85"><h1 data-reactid="86">Raspberry Pi Setup Guide</h1><div data-reactid="87"><p>We recommend that you use a <a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b/">Raspberry Pi 3</a> or <a href="https://www.raspberrypi.org/products/raspberry-pi-2-model-b/">Raspberry Pi 2</a> because of the performance requirements of the Node.js application. If you a buying a raspberry pi, <a href="https://www.amazon.com/Raspberry-Pi-RASP-PI-3-Model-Motherboard/dp/B01CD5VC92">buy a Raspberry Pi 3</a> or latest model.</p>
+</div></div><div data-reactid="60"><hr data-reactid="61"/><h3 data-reactid="62">Contributors</h3><div class="lCzH_a_zk_4vhvhjwNe7c" data-reactid="63"><div class="_2Len9LGxtUJ6nVK4VzO8nr" data-reactid="64"><a class="_24UGgNoPpqYOYWy78Y7-7L" href="https://github.com/AustinSaintAubin" data-reactid="65"><img src="https://github.com/AustinSaintAubin.png?size=90" data-reactid="66"/><span class="_3P40Ju0MfFBTDmTFbL4-zM" data-reactid="67"><!-- react-text: 68 --> <!-- /react-text --><!-- react-text: 69 -->AustinSaintAubin<!-- /react-text --></span></a></div></div></div></div></div><div class="breakpoint-max-width-700" data-reactid="70"><strong data-reactid="71">Topics:</strong><!-- react-text: 72 --> <!-- /react-text --><select data-reactid="73"><option value="/docs/" data-reactid="74">Introduction</option><option value="/docs/installation/" data-reactid="75">Installation</option><option selected="" value="/docs/rpi-setup-guide/" data-reactid="76">Raspberry Pi Setup Guide</option><option value="/docs/desktop-app/" data-reactid="77">Desktop App</option><option value="/docs/user-guide/" data-reactid="78">User Guide</option><option value="/docs/troubleshooting/" data-reactid="79">Troubleshooting</option><option value="/docs/faq/" data-reactid="80">FAQ</option><option value="/docs/resources/" data-reactid="81">Resources</option><option value="/docs/about/" data-reactid="82">About</option></select><br data-reactid="83"/><br data-reactid="84"/><div class="markdown" data-reactid="85"><h1 data-reactid="86">Raspberry Pi Setup Guide</h1><div data-reactid="87"><h1 id="raspberry-pi-setup-guide">Raspberry Pi Setup Guide</h1>
+<p>We recommend that you use a <a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b/">Raspberry Pi 3</a> or <a href="https://www.raspberrypi.org/products/raspberry-pi-2-model-b/">Raspberry Pi 2</a> because of the performance requirements of the Node.js application. If you a buying a raspberry pi, <a href="https://www.amazon.com/Raspberry-Pi-RASP-PI-3-Model-Motherboard/dp/B01CD5VC92">buy a Raspberry Pi 3</a> or latest model.</p>
 <h4 id="recommed-software-for-a-full-web-capatable-cnc-software-stack">Recommed Software (for a full web capatable CNC software stack):</h4>
 <ul>
 <li><a href="http://jscut.org/jscut.html">jscut</a> (converts SVG files to CNC cutting paths)</li>
@@ -419,9 +647,8 @@ sudo apt-<span class="hljs-keyword">get</span> install htop iotop nmon lsof scre
 <hr>
 <h3 id="install-nodejs-via-package-manager"><a href="https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions">Install Node.js via Package Manager</a></h3>
 <pre><code># Install Node.js via Package Manager &amp; Add Package Source
-#curl -sL https:<span class="hljs-comment">//deb.nodesource.com/setup_4.x | sudo -E bash -  # Install NodeJS v4</span>
-curl -sL https:<span class="hljs-comment">//deb.nodesource.com/setup_7.x | sudo -E bash -  # Install NodeJS v7</span>
-sudo apt-get install -y nodejs  # npm nodejs-legacy #(Installed <span class="hljs-keyword">with</span> nodesource)
+curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -  # Install NodeJS v7
+sudo apt-get install -y nodejs  # npm nodejs-legacy <span class="hljs-function"><span class="hljs-keyword">#</span><span class="hljs-params">(<span class="hljs-variable">Installed</span> <span class="hljs-variable">with</span> <span class="hljs-variable">nodesource</span>)</span></span>
 </code></pre>
 <h3 id="update-node-package-manager-npm">Update Node Package Manager (NPM)</h3>
 <pre><code><span class="hljs-comment"># Update Node Package Manager (NPM)</span>
@@ -433,25 +660,32 @@ echo <span class="hljs-string">"[NPM] ============"</span>; <span class="hljs-at
 </code></pre>
 <p><s>### Install Node.JS Serial Port application first (OPTIONAL)
 <code>npm install serialport</code></s></p>
-<h3 id="install-cncjs">Install CNC.js</h3>
-<p><code>sudo npm install -g cncjs --unsafe-perm</code></p>
+<h3 id="install-cncjs">Install CNCjs</h3>
+<pre><code><span class="hljs-meta"># Install Latest Release Version of CNCjs</span>
+sudo npm install -g cncjs@latest --unsafe-perm
+
+<span class="hljs-meta"># --- OR ----</span>
+
+<span class="hljs-meta"># Install Specific Version of CNCjs</span>
+<span class="hljs-meta">#sudo npm install -g cncjs@v1.9.0-beta.1 --unsafe-perm  # Installs Specific Version based on TAG</span>
+</code></pre>
 <h3 id="install-production-process-manager-pm2">Install <a href="http://pm2.io">Production Process Manager [PM2]</a></h3>
-<pre><code># Install PM2
+<pre><code><span class="hljs-comment"># Install PM2</span>
 sudo npm install -g pm2
 
-# Setup PM2 Startup Script
-# sudo pm2 startup  # To Start PM2 <span class="hljs-keyword">as</span> root
-pm2 startup  # To start PM2 <span class="hljs-keyword">as</span> pi / current user
-  #[PM2] You have to run this command <span class="hljs-keyword">as</span> root. Execute the following command:
-  sudo su -c <span class="hljs-string">"env PATH=$PATH:/usr/bin pm2 startup linux -u pi --hp /home/pi"</span>
+<span class="hljs-comment"># Setup PM2 Startup Script</span>
+<span class="hljs-comment"># sudo pm2 startup  # To Start PM2 as root</span>
+pm2 startup  <span class="hljs-comment"># To start PM2 as pi / current user</span>
+  <span class="hljs-comment">#[PM2] You have to run this command as root. Execute the following command:</span>
+  sudo env PATH=$<span class="hljs-symbol">PATH:</span>/usr/bin /usr/<span class="hljs-class"><span class="hljs-keyword">lib</span>/<span class="hljs-title">node_modules</span>/<span class="hljs-title">pm2</span>/<span class="hljs-title">bin</span>/<span class="hljs-title">pm2</span> <span class="hljs-title">startup</span> <span class="hljs-title">systemd</span> -<span class="hljs-title">u</span> <span class="hljs-title">pi</span> --<span class="hljs-title">hp</span> /<span class="hljs-title">home</span>/<span class="hljs-title">pi</span></span>
 
-# Start CNC.js (on port <span class="hljs-number">8000</span>) <span class="hljs-keyword">with</span> PM2
-pm2 start $(which cnc) -- --port <span class="hljs-number">8000</span>
+<span class="hljs-comment"># Start CNCjs (on port 8000, /w Tinyweb mount point) with PM2</span>
+pm2 start $(which cncjs) -- --port <span class="hljs-number">8000</span> -m /<span class="hljs-symbol">tinyweb:</span>/home/pi/tinyweb
 
-# Set current running apps to startup
+<span class="hljs-comment"># Set current running apps to startup</span>
 pm2 save
 
-# Get list <span class="hljs-keyword">of</span> PM2 processes
+<span class="hljs-comment"># Get list of PM2 processes</span>
 pm2 list
 </code></pre>
 <h3 id="iptables-allow-access-to-port-8000-from-port-80">Iptables (allow access to port 8000 from port 80)</h3>
@@ -501,7 +735,7 @@ echo <span class="hljs-string">"[NODE] ============"</span>; <span class="hljs-a
 </code></pre>
 <p><s>### Install Node.JS Serial Port application first (OPTIONAL)
 <code>npm install serialport</code></s></p>
-<h3 id="install-cncjs-2">Install CNC.js</h3>
+<h3 id="install-cncjs-2">Install CNCjs</h3>
 <p><code>npm install -g cncjs</code></p>
 <h3 id="allow-access-to-port-8000-from-port-80">Allow access to port 8000 from port 80</h3>
 <pre><code><span class="hljs-meta"># Allow access to port 8000 from port 80</span>
@@ -523,21 +757,21 @@ sudo apt-<span class="hljs-keyword">get</span> install iptables-persistent -y
 </code></pre>
 <h2 id="auto-start-options">Auto Start Options</h2>
 <h3 id="install-production-process-manager-pm2-2">Install <a href="http://pm2.io">Production Process Manager [PM2]</a></h3>
-<pre><code><span class="hljs-comment"># Install Production Process Manager [PM2]</span>
+<pre><code><span class="hljs-meta"># Install Production Process Manager [PM2]</span>
 npm install pm2 -g
 
-<span class="hljs-comment"># Start CNC.js (on port 8000) with PM2</span>
-pm2 <span class="hljs-literal">start</span> /home/pi/.nvm/versions/<span class="hljs-keyword">node</span><span class="hljs-title">/v4</span>.<span class="hljs-number">5.0</span>/bin/cnc -- --port <span class="hljs-number">8000</span>
+<span class="hljs-meta"># Start CNCjs (on port 8000) with PM2</span>
+pm2 start $(which cncjs) -- --port <span class="hljs-number">8000</span>
 
-<span class="hljs-comment"># Setup PM2 Startup Script</span>
+<span class="hljs-meta"># Setup PM2 Startup Script</span>
 pm2 startup debian
-<span class="hljs-comment">#[PM2] You have to run this command as root. Execute the following command:</span>
+<span class="hljs-meta">#[PM2] You have to run this command as root. Execute the following command:</span>
 sudo su -c <span class="hljs-string">"env PATH=$PATH:/home/pi/.nvm/versions/node/v4.5.0/bin pm2 startup debian -u pi --hp /home/pi"</span>
 
-<span class="hljs-comment"># Set current running apps to startup</span>
+<span class="hljs-meta"># Set current running apps to startup</span>
 pm2 save
 
-<span class="hljs-comment"># Get list of PM2 processes</span>
+<span class="hljs-meta"># Get list of PM2 processes</span>
 pm2 list
 </code></pre>
 <h3 id="auto-start-on-boot-with-cron-alternative">Auto Start on Boot with cron (Alternative)</h3>
@@ -575,15 +809,16 @@ sudo apt-get upgrade -y  # Should also update Node.js <span class="hljs-keyword"
 echo <span class="hljs-string">"[NPM] ============"</span>; <span class="hljs-attribute">which</span> npm; <span class="hljs-attribute">npm</span> -v;
 <span class="hljs-attribute">echo</span> <span class="hljs-string">"[NODE] ============"</span>; <span class="hljs-attribute">which</span> node; <span class="hljs-attribute">node</span> -v
 </code></pre>
-<h3 id="update-cncjs">Update CNC.js</h3>
-<pre><code># Stop CNC.js <span class="hljs-keyword">in</span> PM2 
-pm2 stop cnc
+<h3 id="update-cncjs">Update CNCjs</h3>
+<pre><code><span class="hljs-comment"># Stop CNCjs in PM2 </span>
+pm2 <span class="hljs-literal">stop</span> cnc
 
-# Update CNC.js
-sudo npm update -g cncjs --unsafe-perm  # If fails, then reinstall CNC.js ( sudo npm uninstall -g cncjs; sudo npm install -g cncjs --unsafe-perm ) | https:<span class="hljs-comment">//github.com/cncjs/cncjs/issues/78</span>
+<span class="hljs-comment"># Update CNCjs</span>
+<span class="hljs-comment">#sudo npm update -g cncjs --unsafe-perm  #  Tends to fail to update CNCjs, so we will reinstall CNCjs will the command bellow (no settings will be lost)</span>
+sudo npm install -g cncjs --unsafe-perm  <span class="hljs-comment"># Install CNCjs again, if this fails or causes issue then run (sudo npm uninstall -g cncjs; sudo npm install -g cncjs --unsafe-perm )   https://github.com/cncjs/cncjs/issues/78</span>
 
-# Restart CNC.js <span class="hljs-keyword">in</span> PM2
-pm2 start cnc
+<span class="hljs-comment"># Restart CNCjs in PM2</span>
+pm2 <span class="hljs-literal">start</span> cnc
 </code></pre>
 <h3 id="update-production-process-manager-pm2"><a href="http://pm2.keymetrics.io/docs/usage/update-pm2/">Update Production Process Manager [PM2]</a></h3>
 <pre><code><span class="hljs-comment"># First make sure that you save all your processes:</span>
@@ -598,21 +833,25 @@ pm2 update
 <hr>
 <h1 id="tinyweb-console-for-320x240-lcd-display"><a href="https://github.com/cncjs/cncjs/wiki/User-Guide#tinyweb-console-for-320x240-lcd-display">TinyWeb Console for 320x240 LCD Display</a></h1>
 <pre><code><span class="hljs-meta"># Remove Older Downloads</span>
-rm *tinyweb.zip
+rm -r cncjs-pendant-tinyweb*
 
 <span class="hljs-meta"># Download TinyWeb Example</span>
 wget https:<span class="hljs-comment">//github.com/cncjs/cncjs-pendant-tinyweb/releases/download/latest/cncjs-pendant-tinyweb-1.0.0-613f598.zip</span>
 
-<span class="hljs-meta"># Extract Achieve</span>
-unzip *tinyweb.zip -d /home/<span class="hljs-built_in">pi</span>/
+<span class="hljs-meta"># Extract Archive &amp; Delete</span>
+unzip cncjs-pendant-tinyweb*.zip -d /home/<span class="hljs-built_in">pi</span>/
+rm -r cncjs-pendant-tinyweb*.zip
 
-<span class="hljs-meta"># How-to Start CNC.js w/ mounted TinyWeb</span>
-<span class="hljs-meta">#cnc -m /tinyweb:/home/pi/tinyweb</span>
+<span class="hljs-meta"># Move / Rename Tinyweb Directory</span>
+mv /home/<span class="hljs-built_in">pi</span>/cncjs-pendant-tinyweb* /home/<span class="hljs-built_in">pi</span>/tinyweb
 
-<span class="hljs-meta"># Start CNC.js (on port 8000) with PM2 w/ mounted TinyWeb</span>
-pm2 <span class="hljs-keyword">stop</span> cnc  <span class="hljs-meta"># stop pervious instance</span>
-pm2 <span class="hljs-keyword">delete</span> cnc  <span class="hljs-meta"># delete pervious instance</span>
-pm2 start $(which cnc) -- --port <span class="hljs-number">8000</span> -m /tinyweb:/home/<span class="hljs-built_in">pi</span>/tinyweb
+<span class="hljs-meta"># How-to Start CNCjs w/ mounted TinyWeb</span>
+cncjs -m /tinyweb:/home/<span class="hljs-built_in">pi</span>/tinyweb
+
+<span class="hljs-meta"># Start CNCjs (on port 8000, /w Tinyweb) with PM2</span>
+pm2 <span class="hljs-keyword">stop</span> cncjs  <span class="hljs-meta"># stop pervious instance</span>
+pm2 <span class="hljs-keyword">delete</span> cnsjc  <span class="hljs-meta"># delete pervious instance</span>
+pm2 start $(which cncjs) -- --port <span class="hljs-number">8000</span> -m /tinyweb:/home/<span class="hljs-built_in">pi</span>/tinyweb
 pm2 <span class="hljs-keyword">save</span> <span class="hljs-meta"># Set current running apps to startup</span>
 </code></pre>
 <hr>
@@ -649,6 +888,218 @@ sudo ifup wlan0
 
 <span class="hljs-comment"># Check Interface for IP</span>
 ifconfig wlan0
+</code></pre>
+<hr>
+<h1 id="mjpeg-streamer-install-setup">MJPEG-Streamer Install &amp; Setup</h1>
+<ul>
+<li><a href="https://github.com/jacksonliam/mjpg-streamer">https://github.com/jacksonliam/mjpg-streamer</a></li>
+<li><a href="http://raspberrypi.stackexchange.com/questions/36734/compile-mjpg-streamer-error">http://raspberrypi.stackexchange.com/questions/36734/compile-mjpg-streamer-error</a></li>
+</ul>
+<pre><code><span class="hljs-meta"># Update &amp; Install Tools</span>
+sudo apt-<span class="hljs-keyword">get</span> update
+sudo apt-<span class="hljs-keyword">get</span> upgrade -y
+sudo apt-<span class="hljs-keyword">get</span> install build-essential libjpeg8-dev imagemagick libv4l-dev cmake -y
+
+<span class="hljs-meta"># Clone Repo in /tmp</span>
+cd /tmp
+git clone https:<span class="hljs-comment">//github.com/jacksonliam/mjpg-streamer.git</span>
+cd mjpg-streamer/mjpg-streamer-experimental
+
+<span class="hljs-meta"># Make</span>
+make
+sudo make install
+
+<span class="hljs-meta"># Run</span>
+/usr/local/bin/mjpg_streamer -i <span class="hljs-string">"input_uvc.so -r 1280x720 -d /dev/video0 -f 30 -q 80"</span> -o <span class="hljs-string">"output_http.so -p 8080 -w /usr/local/share/mjpg-streamer/www"</span>
+</code></pre>
+<h1 id="mjpeg-streamer-auto-start">MJPEG-Streamer Auto Start</h1>
+<h2 id="manager-script">Manager Script</h2>
+<pre><code>nano /home/pi/mjpg-streamer<span class="hljs-selector-class">.sh</span>
+</code></pre>
+<p>Add the below code to ( /home/pi/mjpg-streamer.sh )</p>
+<pre><code><span class="hljs-meta">#!/bin/bash</span>
+<span class="hljs-comment"># chmod +x mjpg-streamer.sh</span>
+<span class="hljs-comment"># Crontab: @reboot /home/pi/mjpg-streamer.sh start</span>
+
+MJPG_STREAMER_BIN=<span class="hljs-string">"/usr/local/bin/mjpg_streamer"</span> <span class="hljs-comment"># "$(dirname $0)/mjpg_streamer"</span>
+MJPG_STREAMER_WWW=<span class="hljs-string">"/usr/local/share/mjpg-streamer/www"</span>
+MJPG_STREAMER_LOG_FILE=<span class="hljs-string">"<span class="hljs-variable">$(dirname $0)</span>/mjpg-streamer.log"</span>
+RUNNING_CHECK_INTERVAL=<span class="hljs-string">"2"</span> <span class="hljs-comment"># how often to check to make sure the server is running (in seconds)</span>
+HANGING_CHECK_INTERVAL=<span class="hljs-string">"3"</span> <span class="hljs-comment"># how often to check to make sure the server is not hanging (in seconds)</span>
+
+VIDEO_DEV=<span class="hljs-string">"/dev/video0"</span>
+FRAME_RATE=<span class="hljs-string">"30"</span>
+QUALITY=<span class="hljs-string">"60"</span>
+RESOLUTION=<span class="hljs-string">"VGA"</span>  <span class="hljs-comment"># 1920x1080, 1280x720, 640x480 (VGA, SVGA), 176x144, 160x120, 352x288, 320x240 (QVGA)</span>
+PORT=<span class="hljs-string">"8080"</span>
+YUV=<span class="hljs-string">"yes"</span>
+
+INPUT_OPTIONS=<span class="hljs-string">"-r <span class="hljs-variable">${RESOLUTION}</span> -d <span class="hljs-variable">${VIDEO_DEV}</span> -f <span class="hljs-variable">${FRAME_RATE}</span> -q <span class="hljs-variable">${QUALITY}</span>"</span>
+<span class="hljs-keyword">if</span> [ <span class="hljs-string">"<span class="hljs-variable">${YUV}</span>"</span> == <span class="hljs-string">"true"</span> ]; <span class="hljs-keyword">then</span>
+	INPUT_OPTIONS+=<span class="hljs-string">" -y"</span>
+<span class="hljs-keyword">fi</span>
+
+OUTPUT_OPTIONS=<span class="hljs-string">"-p <span class="hljs-variable">${PORT}</span> -w <span class="hljs-variable">${MJPG_STREAMER_WWW}</span>"</span>
+
+<span class="hljs-comment"># ==========================================================</span>
+<span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">running</span></span>() {
+    <span class="hljs-keyword">if</span> ps aux | grep <span class="hljs-variable">${MJPG_STREAMER_BIN}</span> | grep <span class="hljs-variable">${VIDEO_DEV}</span> &gt;/dev/null 2&gt;&amp;1; <span class="hljs-keyword">then</span>
+        <span class="hljs-built_in">return</span> 0
+
+    <span class="hljs-keyword">else</span>
+        <span class="hljs-built_in">return</span> 1
+
+    <span class="hljs-keyword">fi</span>
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">start</span></span>() {
+    <span class="hljs-keyword">if</span> running; <span class="hljs-keyword">then</span>
+        <span class="hljs-built_in">echo</span> <span class="hljs-string">"already started"</span>
+        <span class="hljs-built_in">return</span> 1
+    <span class="hljs-keyword">fi</span>
+
+    <span class="hljs-built_in">export</span> LD_LIBRARY_PATH=<span class="hljs-string">"<span class="hljs-variable">$(dirname $MJPG_STREAMER_BIN)</span>:."</span>
+
+	<span class="hljs-built_in">echo</span> <span class="hljs-string">"Starting:  <span class="hljs-variable">${MJPG_STREAMER_BIN}</span> -i \"input_uvc.so <span class="hljs-variable">${INPUT_OPTIONS}</span>\" -o \"output_http.so <span class="hljs-variable">${OUTPUT_OPTIONS}</span>\""</span>
+    <span class="hljs-variable">${MJPG_STREAMER_BIN}</span> -i <span class="hljs-string">"input_uvc.so <span class="hljs-variable">${INPUT_OPTIONS}</span>"</span> -o <span class="hljs-string">"output_http.so <span class="hljs-variable">${OUTPUT_OPTIONS}</span>"</span> &gt;&gt; <span class="hljs-variable">${MJPG_STREAMER_LOG_FILE}</span> 2&gt;&amp;1 &amp;
+
+    sleep 1
+
+    <span class="hljs-keyword">if</span> running; <span class="hljs-keyword">then</span>
+        <span class="hljs-keyword">if</span> [ <span class="hljs-string">"<span class="hljs-variable">$1</span>"</span> != <span class="hljs-string">"nocheck"</span> ]; <span class="hljs-keyword">then</span>
+            check_running &amp; &gt; /dev/null 2&gt;&amp;1 <span class="hljs-comment"># start the running checking task</span>
+            check_hanging &amp; &gt; /dev/null 2&gt;&amp;1 <span class="hljs-comment"># start the hanging checking task</span>
+        <span class="hljs-keyword">fi</span>
+
+        <span class="hljs-built_in">echo</span> <span class="hljs-string">"started"</span>
+        <span class="hljs-built_in">return</span> 0
+
+    <span class="hljs-keyword">else</span>
+        <span class="hljs-built_in">echo</span> <span class="hljs-string">"failed to start"</span>
+        <span class="hljs-built_in">return</span> 1
+
+    <span class="hljs-keyword">fi</span>
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">stop</span></span>() {
+    <span class="hljs-keyword">if</span> ! running; <span class="hljs-keyword">then</span>
+        <span class="hljs-built_in">echo</span> <span class="hljs-string">"not running"</span>
+        <span class="hljs-built_in">return</span> 1
+    <span class="hljs-keyword">fi</span>
+
+    own_pid=$$
+
+    <span class="hljs-keyword">if</span> [ <span class="hljs-string">"<span class="hljs-variable">$1</span>"</span> != <span class="hljs-string">"nocheck"</span> ]; <span class="hljs-keyword">then</span>
+        <span class="hljs-comment"># stop the script running check task</span>
+        ps aux | grep <span class="hljs-variable">$0</span> | grep start | tr <span class="hljs-_">-s</span> <span class="hljs-string">' '</span> | cut <span class="hljs-_">-d</span> <span class="hljs-string">' '</span> <span class="hljs-_">-f</span> 2 | grep -v <span class="hljs-variable">${own_pid}</span> | xargs -r <span class="hljs-built_in">kill</span>
+        sleep 0.5
+    <span class="hljs-keyword">fi</span>
+
+    <span class="hljs-comment"># stop the server</span>
+    ps aux | grep <span class="hljs-variable">${MJPG_STREAMER_BIN}</span> | grep <span class="hljs-variable">${VIDEO_DEV}</span> | tr <span class="hljs-_">-s</span> <span class="hljs-string">' '</span> | cut <span class="hljs-_">-d</span> <span class="hljs-string">' '</span> <span class="hljs-_">-f</span> 2 | grep -v <span class="hljs-variable">${own_pid}</span> | xargs -r <span class="hljs-built_in">kill</span>
+
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">"stopped"</span>
+    <span class="hljs-built_in">return</span> 0
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">check_running</span></span>() {
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">"starting running check task"</span> &gt;&gt; <span class="hljs-variable">${MJPG_STREAMER_LOG_FILE}</span>
+
+    <span class="hljs-keyword">while</span> <span class="hljs-literal">true</span>; <span class="hljs-keyword">do</span>
+        sleep <span class="hljs-variable">${RUNNING_CHECK_INTERVAL}</span>
+
+        <span class="hljs-keyword">if</span> ! running; <span class="hljs-keyword">then</span>
+            <span class="hljs-built_in">echo</span> <span class="hljs-string">"server stopped, starting"</span> &gt;&gt; <span class="hljs-variable">${MJPG_STREAMER_LOG_FILE}</span>
+            start nocheck
+        <span class="hljs-keyword">fi</span>
+    <span class="hljs-keyword">done</span>
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">check_hanging</span></span>() {
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">"starting hanging check task"</span> &gt;&gt; <span class="hljs-variable">${MJPG_STREAMER_LOG_FILE}</span>
+
+    <span class="hljs-keyword">while</span> <span class="hljs-literal">true</span>; <span class="hljs-keyword">do</span>
+        sleep <span class="hljs-variable">${HANGING_CHECK_INTERVAL}</span>
+
+        <span class="hljs-comment"># treat the "error grabbing frames" case</span>
+        <span class="hljs-keyword">if</span> tail -n2 <span class="hljs-variable">${MJPG_STREAMER_LOG_FILE}</span> | grep -i <span class="hljs-string">"error grabbing frames"</span> &gt; /dev/null; <span class="hljs-keyword">then</span>
+            <span class="hljs-built_in">echo</span> <span class="hljs-string">"server is hanging, killing"</span> &gt;&gt; <span class="hljs-variable">${MJPG_STREAMER_LOG_FILE}</span>
+            stop nocheck
+        <span class="hljs-keyword">fi</span>
+    <span class="hljs-keyword">done</span>
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">help</span></span>() {
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">"Usage: <span class="hljs-variable">$0</span> [start|stop|restart|status]"</span>
+    <span class="hljs-built_in">return</span> 0
+}
+
+<span class="hljs-keyword">if</span> [ <span class="hljs-string">"<span class="hljs-variable">$1</span>"</span> == <span class="hljs-string">"start"</span> ]; <span class="hljs-keyword">then</span>
+    start &amp;&amp; <span class="hljs-built_in">exit</span> 0 || <span class="hljs-built_in">exit</span> -1
+
+<span class="hljs-keyword">elif</span> [ <span class="hljs-string">"<span class="hljs-variable">$1</span>"</span> == <span class="hljs-string">"stop"</span> ]; <span class="hljs-keyword">then</span>
+    stop &amp;&amp; <span class="hljs-built_in">exit</span> 0 || <span class="hljs-built_in">exit</span> -1
+
+<span class="hljs-keyword">elif</span> [ <span class="hljs-string">"<span class="hljs-variable">$1</span>"</span> == <span class="hljs-string">"restart"</span> ]; <span class="hljs-keyword">then</span>
+    stop &amp;&amp; sleep 1
+    start &amp;&amp; <span class="hljs-built_in">exit</span> 0 || <span class="hljs-built_in">exit</span> -1
+
+<span class="hljs-keyword">elif</span> [ <span class="hljs-string">"<span class="hljs-variable">$1</span>"</span> == <span class="hljs-string">"status"</span> ]; <span class="hljs-keyword">then</span>
+    <span class="hljs-keyword">if</span> running; <span class="hljs-keyword">then</span>
+        <span class="hljs-built_in">echo</span> <span class="hljs-string">"running"</span>
+        <span class="hljs-built_in">exit</span> 0
+
+    <span class="hljs-keyword">else</span>
+        <span class="hljs-built_in">echo</span> <span class="hljs-string">"stopped"</span>
+        <span class="hljs-built_in">exit</span> 1
+
+    <span class="hljs-keyword">fi</span>
+
+<span class="hljs-keyword">else</span>
+    <span class="hljs-built_in">help</span>
+
+<span class="hljs-keyword">fi</span>
+</code></pre>
+<h2 id="start-on-boot">Start on Boot</h2>
+<pre><code><span class="hljs-comment"># Make Executable</span>
+chmod +x /home/<span class="hljs-literal">pi</span>/mjpg-streamer.sh
+
+<span class="hljs-comment"># Open Cron Job</span>
+crontab -<span class="hljs-literal">e</span>
+
+<span class="hljs-comment"># Add line</span>
+<span class="hljs-meta">@reboot</span> /home/<span class="hljs-literal">pi</span>/mjpg-streamer.sh start
+</code></pre>
+<hr>
+<h1 id="ffmpeg">FFMpeg</h1>
+<p><a href="http://www.jeffreythompson.org/blog/2014/11/13/installing-ffmpeg-for-raspberry-pi/">http://www.jeffreythompson.org/blog/2014/11/13/installing-ffmpeg-for-raspberry-pi/</a></p>
+<pre><code><span class="hljs-meta"># Run as Sudo</span>
+sudo -i
+
+<span class="hljs-meta"># INSTALL H264 SUPPORT</span>
+cd /usr/src
+git clone git:<span class="hljs-comment">//git.videolan.org/x264</span>
+cd x264
+./configure --host=arm-unknown-linux-gnueabi --<span class="hljs-keyword">enable</span>-static --<span class="hljs-keyword">disable</span>-opencl
+<span class="hljs-built_in">make</span>
+sudo <span class="hljs-built_in">make</span> install
+
+<span class="hljs-meta"># INSTALL FFMPEG (This may take a REALLY long time, so be patient.)</span>
+cd /usr/src
+git clone https:<span class="hljs-comment">//github.com/FFmpeg/FFmpeg.git</span>
+cd FFmpeg
+sudo ./configure --arch=armel --target-os=linux --<span class="hljs-keyword">enable</span>-gpl --<span class="hljs-keyword">enable</span>-libx264 --<span class="hljs-keyword">enable</span>-nonfree
+<span class="hljs-built_in">make</span>
+sudo <span class="hljs-built_in">make</span> install
+</code></pre>
+<h1 id="recored-stream-w-ffmpeg">Recored Stream w/ ffmpeg</h1>
+<pre><code><span class="hljs-comment"># [Varables]</span>
+source_stram=<span class="hljs-string">"http://xcarve:8080/?action=stream"</span>
+destination_directory=<span class="hljs-string">"/home/pi/Videos"</span>
+destination_file=<span class="hljs-string">"xcarve-recording_$(date +'%Y%m%d_%H%M%S').mpeg"</span>
+
+<span class="hljs-comment"># Recored Stream w/ ffmpeg</span>
+ffmpeg -i <span class="hljs-string">"<span class="hljs-subst">${source_stram}</span>"</span> <span class="hljs-string">"<span class="hljs-subst">${destination_directory}</span>/<span class="hljs-subst">${destination_file}</span>"</span>
 </code></pre>
 <hr>
 <h1 id="raspberry-pi-shutdown-button-led-script"><a href="https://twitter.com/AustinStAubin/status/798058374059335680">Raspberry Pi Shutdown Button &amp; LED Script</a></h1>
@@ -726,6 +1177,9 @@ gpio.setup(led_pin, gpio.OUT, initial=<span class="hljs-number">1</span>)
 
 loop() <span class="hljs-comment"># Run the loop function to keep script running</span>
 </code></pre>
+<h2 id="set-to-executable">Set to Executable</h2>
+<pre><code>sudo chmod +x  /root/shutdown_button_pi<span class="hljs-selector-class">.py</span>
+</code></pre>
 <h2 id="run-script-test">Run Script &amp; Test</h2>
 <p><code>sudo python3 /root/shutdown_button_pi.py</code></p>
 <h2 id="autostart-script">Autostart Script</h2>
@@ -735,4 +1189,4 @@ sudo crontab -e
 <span class="hljs-meta"># Now, enter the line:</span>
 @reboot sudo <span class="hljs-meta-keyword">/usr/</span>bin/python3 <span class="hljs-meta-keyword">/root/</span>shutdown_button_pi.py &gt; <span class="hljs-meta-keyword">/root/</span>shutdown_button_pi.log <span class="hljs-number">2</span>&gt;<span class="hljs-variable">&amp;1</span>
 </code></pre>
-</div></div></div></div></div></div></div><script src="/bundle.js?t=1490174590134"></script></body></html>
+</div></div></div></div></div></div></div><script src="/bundle.js?t=1490495447265"></script></body></html>
