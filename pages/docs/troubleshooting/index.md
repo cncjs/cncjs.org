@@ -16,8 +16,9 @@ Please bear the following precautions in mind when troubleshooting:
 ## Table of Contents
 
 * [Experienced unexpected errors during data transmission](#experienced-unexpected-errors-during-data-transmission)
+* [Troubleshoot Electron app on Windows](#troubleshoot-electron-app-on-windows)
 
-### Experienced unexpected errors during data transmission
+## Experienced unexpected errors during data transmission
 
 Some symptoms of data transmission issues may be:
   - Web interface stops updating Axis positions although the machine is still moving
@@ -34,3 +35,12 @@ Possible resolutions for data transmission issues may be:
   - Install ferrite cores on each end of the USB cable, or use a shielded USB cable that has built-in ferrite cores.
   - Turn off any nearby electrical components, unplug them, and move them away from the area.  Any piece of metal nearby can act as an antenna for electrical interference.
   - Separate your motor driver cables and spindle cables from your signal cables (USB and limit switch wires).  The current flowing through the motor and spindle cables can induce electrical signals into nearby cables, causing interference.  This may be more difficult than it seems.  Basically, just make sure they don't run parallel while touching.  If they do touch (like at a mounting point), make sure they cross and go on different paths.
+  
+## Troubleshoot Electron app on Windows
+
+1. Go to https://github.com/electron/electron/releases, and download a zip file that matches your target platform. For example, you can download `electron-{version}-win32-x64.zip` when running the x64 version of Windows.
+2. Extract the ZIP file to a folder. For example: <b>C:\\Temp\\electron-{version}-win32-x64\\</b>.
+3. Go to the installation directory of cncjs: `cd C:\Users\{Username}\AppData\Local\Programs\cncjs\resources\app\`
+4. Run <b>C:\\Temp\\electron-{version}-win32-x64\\electron.exe main.js -vvv</b>, then you will be able to see verbose output with `-vvv`.
+
+    ![image](https://cloud.githubusercontent.com/assets/447801/24361796/7c4bc25a-133d-11e7-80f7-07392c175899.png)
