@@ -10,7 +10,10 @@ contributors:
   - [Widgets](#widgets)
 * [Settings](#settings)
   - [General](#general)
-  - [Account](#account)
+  - [Workspace](#workspace)
+  - [My Account](#my-account)
+  - [Commands](#commands)
+  - [Events](#events)
 * [Keyboard Shortcuts](#keyboard-shortcuts)
 * [Contour ShuttleXpress](#contour-shuttlexpress)
 
@@ -109,9 +112,15 @@ Checkout [FAQ](https://cnc.js.org/docs/faq/) to learn how to setup and configure
 
 ### General
 
-### Account
+### Workspace
+
+### My Account
 
 ![image](https://cloud.githubusercontent.com/assets/447801/20375707/d036adbe-acbb-11e6-8b3f-514c06e7c9e4.png)
+
+### Commands
+
+### Events
 
 ---
 
