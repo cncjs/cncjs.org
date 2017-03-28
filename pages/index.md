@@ -11,47 +11,52 @@ contributors:
 
 A web-based interface for CNC milling controller running [Grbl](https://github.com/grbl/grbl), [Smoothieware](https://github.com/Smoothieware/Smoothieware), or [TinyG](https://github.com/synthetos/TinyG). It runs on an [Raspberry Pi](https://www.raspberrypi.org/) or a laptop computer that you have Node.js installed, connecting to the Arduino over a serial connection using a USB serial port, a Bluetooth serial module, or a  Serial-to-WiFi module like [XBee](https://www.arduino.cc/en/Guide/ArduinoWirelessShieldS2) or [USR-WIFI232-T](https://gist.github.com/ajfisher/1fdbcbbf96b7f2ba73cd).
 
-![cnc.png](https://raw.githubusercontent.com/cncjs/cncjs/master/media/cnc.png)
+![cncjs](https://cloud.githubusercontent.com/assets/447801/24392019/aa2d725e-13c4-11e7-9538-fd5f746a2130.png)
 
 ## Features
+
 * Supported CNC controllers
     - [Grbl](https://github.com/gnea/grbl)
     - [Smoothieware](https://github.com/Smoothieware/Smoothieware)
     - [TinyG](https://github.com/synthetos/TinyG) and [g2core](https://github.com/synthetos/g2)
-* [Desktop App for Linux, Mac OS X, and Windows](https://cnc.js.org/docs/desktop-app)
+* [Desktop App for Linux, Mac OS X, and Windows](https://github.com/cncjs/cncjs/wiki/Desktop-App)
 * 3D Visualizer
 * Allows multiple HTTP connections at the same serial port
 * Responsive view for small screen display with device width less than 720px
     - <i>Safari on an iPhone 5S</i> [\[1\]](https://cloud.githubusercontent.com/assets/447801/15633749/b817cd4a-25e7-11e6-9beb-600c65ea1324.PNG) [\[2\]](https://cloud.githubusercontent.com/assets/447801/15633750/b819b5f6-25e7-11e6-8bfe-d3e6247e443b.PNG)
+* Customizable workspace
+* My Account
+* Commands
+* Events
 * [Keyboard Shortcuts](https://cnc.js.org/docs/user-guide/#keyboard-shortcuts)
 * [Contour ShuttleXpress](https://cnc.js.org/docs/user-guide/#contour-shuttlexpress)
-* Account Management
 * Multi-Language Support 
 * Watch Directory
-* Z-Probing
+* Z-Probe
 
 ## Pendant
 
+* [cncjs-pendant-boilerplate](https://github.com/cncjs/cncjs-pendant-boilerplate)
 * [cncjs-pendant-ps3](https://github.com/cncjs/cncjs-pendant-ps3)
 * [cncjs-pendant-tinyweb](https://github.com/cncjs/cncjs-pendant-tinyweb)
 
 ## Browser Support
+
 ![Chrome](https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png)<br>Chrome | ![Edge](https://raw.github.com/alrra/browser-logos/master/src/edge/edge_48x48.png)<br>Edge | ![Firefox](https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png)<br>Firefox | ![IE](https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png)<br>IE | ![Opera](https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png)<br>Opera | ![Safari](https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png)<br>Safari
 --- | --- | --- | --- | --- | --- |
  Yes | Yes | Yes| Not supported | Yes | Yes | 
 
-## Installation
+## Getting Started
 
 ### Node.js Installation
 
-Node.js v4 or higher is recommended. You can install [Node Version Manager](https://github.com/creationix/nvm) to manage multiple Node.js versions. If you have `git` installed, just clone the `nvm` repo, and check out the latest version:
+Node.js 4 or higher is recommended. You can install [Node Version Manager](https://github.com/creationix/nvm) to manage multiple Node.js versions. If you have `git` installed, just clone the `nvm` repo, and check out the latest version:
 ```
-$ git clone https://github.com/creationix/nvm.git ~/.nvm
-$ cd ~/.nvm
-$ git checkout `git describe --abbrev=0 --tags`
-$ cd ..
-$ . ~/.nvm/nvm.sh
-$ nvm install 4
+git clone https://github.com/creationix/nvm.git ~/.nvm
+cd ~/.nvm
+git checkout `git describe --abbrev=0 --tags`
+cd ..
+. ~/.nvm/nvm.sh
 ```
 
 Add these lines to your `~/.bash_profile`, `~/.bashrc`, or `~/.profile` file to have it automatically sourced upon login: 
@@ -60,41 +65,43 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 ```
 
-If you're using Node.js v4 or earlier versions, it's recommended that you use npm v3 to install packages. To upgrade, run:
+Once installed, you can select Node.js versions with:
 ```
-$ npm install npm@latest -g
-```
-
-### Getting Started
-
-Make sure you're using Node.js v4 (or higher) and npm v3:
-```
-$ nvm use 4
-Now using node v4.5.0 (npm v3.10.6)
+nvm install 4
+nvm use 4
 ```
 
-Install `cncjs` without `sudo`, or the `serialport` module may not install correctly on some platforms like Raspberry Pi.
+If you're using Node.js 4 or earlier versions, it's recommended that you upgrade npm to the latest version. To upgrade, run:
 ```
-$ npm install -g cncjs
+npm install npm@latest -g
+```
+
+### Installation
+
+Install cncjs as a non-root user, or the [serialport](https://github.com/EmergingTechnologyAdvisors/node-serialport) module may not install correctly on some platforms like Raspberry Pi.
+```
+npm install -g cncjs
+```
+
+If you're going to use sudo or root to install cncjs, you need to specify the `--unsafe-perm` option to run npm as the root account.
+```
+sudo npm install --unsafe-perm -g cncjs
 ```
 
 It's recommended that you run [Raspbian Jessie](https://www.raspberrypi.org/downloads/raspbian/) on the RPi2 or RPi3. For Raspbian Wheezy, be sure to [install gcc/g++ 4.8](https://somewideopenspace.wordpress.com/2014/02/28/gcc-4-8-on-raspberry-pi-wheezy/) before npm install.
 
-Check out [here](https://cnc.js.org/docs/installation/) for other installation methods.
+Check out [https://cnc.js.org/docs/installation/](https://cnc.js.org/docs/installation/) for other installation methods.
 
 ### Upgrade
+
 Run `npm install -g cncjs@latest` to install the latest version. To determine the version, use `cnc -V`.
 
 ### Usage
-Run `cnc` or `~/.npm/bin/cnc` to start the server, and visit `http://yourhostname:8000/` to view the web interface:
-```
-$ cnc
-2016-12-01T15:00:41.499Z - info: Started the server at http://192.168.1.100:8000
-```
 
-Run `cnc` with -h for detailed usage:
+Run `cnc` to start the server, and visit `http://yourhostname:8000/` to view the web interface. Pass `--help` to `cnc` for more options.
+
 ```
-$ cnc -h
+pi@rpi3$ cnc -h
 
   Usage: cnc [options]
   
@@ -130,9 +137,9 @@ Instead of passing command line options for `--watch-directory`, `--access-token
 }
 ```
 
-If you need view detailed logs for troubleshooting, you can run the server in debug mode.
+To troubleshoot issues, run:
 ```
-$ cnc -vvv
+cnc -vvv
 ```
 
 ### Configuration File
@@ -152,6 +159,7 @@ The configuration file <b>.cncrc</b> contains settings that are equivalent to th
 Check out an example configuration file [here](https://github.com/cncjs/cncjs/blob/master/examples/.cncrc).
 
 ### File Format
+
 ```json
 {
   "watchDirectory": "/path/to/dir",
@@ -183,9 +191,9 @@ Check out an example configuration file [here](https://github.com/cncjs/cncjs/bl
 }
 ```
 
-## Wiki
+## Documentation
 
-https://github.com/cncjs/cncjs/wiki
+https://cnc.js.org/docs/
 
 ## Examples
 
