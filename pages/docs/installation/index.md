@@ -92,6 +92,7 @@ pi@rpi3$ cnc -h
     -w, --watch-directory <path>        watch a directory for changes
     --access-token-lifetime <lifetime>  access token lifetime in seconds or a time span string (default: 30d)
     --allow-remote-access               allow remote access to the server
+    --controller <type>                 specify CNC controller: Grbl|Smoothie|TinyG|g2core (default: '')
 
   Examples:
 
@@ -100,6 +101,7 @@ pi@rpi3$ cnc -h
     $ cnc --watch-directory /home/pi/watch
     $ cnc --access-token-lifetime 60d  # e.g. 3600, 30m, 12h, 30d
     $ cnc --allow-remote-access
+    $ cnc --controller Grbl
 ```
 
 Instead of passing command line options for `--watch-directory`, `--access-token-lifetime`, and `--allow-remote-access`, you can create a `~/.cncrc` file that contains the following configuration in JSON format:
@@ -107,7 +109,8 @@ Instead of passing command line options for `--watch-directory`, `--access-token
 {
     "watchDirectory": "/path/to/dir",
     "accessTokenLifetime": "30d",
-    "allowRemoteAccess": false
+    "allowRemoteAccess": false,
+    "controller": ""
 }
 ```
 
@@ -135,30 +138,39 @@ Check out an example configuration file [here](https://github.com/cncjs/cncjs/bl
 ### File Format
 ```json
 {
+  "ports": [
+     {
+       "comName": "/dev/ttyAMA0",
+       "manufacturer": ""
+     }
+  ],
+  "baudrates": [115200, 250000],
   "watchDirectory": "/path/to/dir",
   "accessTokenLifetime": "30d",
   "allowRemoteAccess": false,
+  "controller": "",
   "state": {
     "checkForUpdates": true
   },
   "commands": [
     {
-      "text": "Update (root user)",
-      "command": "sudo npm install -g cncjs@latest --unsafe-perm; pkill -a -f cnc"
+      "title": "Update (root user)",
+      "commands": "sudo npm install -g cncjs@latest --unsafe-perm; pkill -a -f cnc"
     },
     {
-      "text": "Update (non-root user)",
-      "command": "npm install -g cncjs@latest; pkill -a -f cnc"
+      "title": "Update (non-root user)",
+      "commands": "npm install -g cncjs@latest; pkill -a -f cnc"
     },
     {
-      "text": "Reboot",
-      "command": "sudo /sbin/reboot"
+      "title": "Reboot",
+      "commands": "sudo /sbin/reboot"
     },
     {
-      "text": "Shutdown",
-      "command": "sudo /sbin/shutdown"
+      "title": "Shutdown",
+      "commands": "sudo /sbin/shutdown"
     }
   ],
+  "events": [],
   "macros": [],
   "users": []
 }
