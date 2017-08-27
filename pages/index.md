@@ -45,6 +45,17 @@ A web-based interface for CNC milling controller running [Grbl](https://github.c
 ![Chrome](https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png)<br>Chrome | ![Edge](https://raw.github.com/alrra/browser-logos/master/src/edge/edge_48x48.png)<br>Edge | ![Firefox](https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png)<br>Firefox | ![IE](https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png)<br>IE | ![Opera](https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png)<br>Opera | ![Safari](https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png)<br>Safari
 --- | --- | --- | --- | --- | --- |
  Yes | Yes | Yes| Not supported | Yes | Yes | 
+ 
+## Supported Node.js Versions
+
+Version | Supported Level
+:------ |:---------------
+<=0.12 | Unsupported
+4 | <b>Recommended for production use</b>
+5 | Supported
+6 | <b>Recommended for production use</b>
+7 | Supported
+8 | Unsupported<br>Note. Will be supported in CNCjs 2.0
 
 ## Getting Started
 
