@@ -8,9 +8,12 @@ Every contribution is appreciated and welcome. If you're planning to add a new s
 * Fork the **cncjs.org** repo at [https://github.com/cncjs/cncjs.org](https://github.com/cncjs/cncjs.org).
 * `git clone <your-clone-url> && cd cncjs.org`
 * `npm install`
-* `npm run build`
-* `npm dev`
+* `npm run dev`
 * Visit [http://localhost:8000](http://localhost:8000) to preview your changes before making a pull request.
+
+## Production
+
+After you have finished editing the document, run `npm run build` to create a production version of the site, and push your commited changes to GitHub.
 
 ## Branching Your Changes
 

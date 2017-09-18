@@ -10,7 +10,7 @@ To develop, please fork the project and then clone the forked repository to your
 
 - `npm install` to install all dependencies.
 - `npm run build` to create a production version of the site.
-- `npm dev` to develop on a local webpack-dev-server.
+- `npm run dev` to develop on a local webpack-dev-server.
 
 For more information see the [contributors page](https://github.com/cncjs/cncjs.org/blob/master/CONTRIBUTING.md)
 
