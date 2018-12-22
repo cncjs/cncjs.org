@@ -220,7 +220,7 @@ Check out a live demo at http://jscut.org/jscut.html.
 
 Use [GitHub issues](https://github.com/cncjs/cncjs/issues) for requests.
 
-Pull requests welcome! Learn how to [contribute](CONTRIBUTING.md).
+Pull requests welcome! Learn how to [contribute](https://github.com/cncjs/cncjs.org/blob/master/CONTRIBUTING.md).
 
 ## Localization
 
