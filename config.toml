@@ -10,5 +10,6 @@ docPages = [
     "/docs/troubleshooting/",
     "/docs/faq/",
     "/docs/resources/",
+    "/docs/shapeoko/",
     "/docs/about/"
 ]
