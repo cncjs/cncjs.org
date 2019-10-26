@@ -6,7 +6,7 @@ contributors:
 
 # Raspberry Pi Setup Guide
 
-We recommend that you use a [Raspberry Pi 3](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) or [Raspberry Pi 2](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) because of the performance requirements of the Node.js application. If you a buying a raspberry pi, [buy a Raspberry Pi 3](https://www.amazon.com/Raspberry-Pi-RASP-PI-3-Model-Motherboard/dp/B01CD5VC92) or latest model.
+We recommend that you use at least a [Raspberry Pi 2](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) because of the performance requirements of the browser-based CNCjs user interface. If you a buying a raspberry pi, [buy a Raspberry Pi 3](https://www.amazon.com/Raspberry-Pi-RASP-PI-3-Model-Motherboard/dp/B01CD5VC92) or latest model.  The CNCjs server - the background component that talks directly to a controller like GRBL - runs well even on a Pi Zero, but such low-end Pi's are underpowered for running the CNCjs user interface in a browser on the Pi. It is okay to run the CNCjs server on any Pi and run the browser on a more capable machine.
 
 #### Recommed Software (for a full web capatable CNC software stack):
 * [jscut](http://jscut.org/jscut.html) (converts SVG files to CNC cutting paths)
