@@ -3,6 +3,7 @@ title: Installation
 contributors:
   - cheton
   - AustinSaintAubin
+  - MitchBradley
 ---
 
 ## index
@@ -16,7 +17,7 @@ contributors:
 
 ## Raspberry Pi Setup Guide
 
-We have a dedicated setup guide for setting up Node.js, NVM, CNC.js, Autostart with pm2, all tested on the Raspberry Pi. Go to https://cnc.js.org/docs/rpi-setup-guide/ for more details.
+We have a dedicated setup guide for setting up Node.js, NVM, CNC.js, Autostart with pm2, all tested on the Raspberry Pi. Go to https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-Install-Node.js-via-Package-Manager-*(Recommended)* for more details.
 
 ---
 
@@ -24,7 +25,7 @@ We have a dedicated setup guide for setting up Node.js, NVM, CNC.js, Autostart w
 
 ### Node.js Installation
 
-Node.js 4 or higher is recommended. You can install [Node Version Manager](https://github.com/creationix/nvm) to manage multiple Node.js versions. If you have `git` installed, just clone the `nvm` repo, and check out the latest version:
+Node.js 8 is recommended. You can install [Node Version Manager](https://github.com/creationix/nvm) to manage multiple Node.js versions. If you have `git` installed, just clone the `nvm` repo, and check out the latest version:
 ```
 git clone https://github.com/creationix/nvm.git ~/.nvm
 cd ~/.nvm
@@ -41,13 +42,8 @@ export NVM_DIR="$HOME/.nvm"
 
 Once installed, you can select Node.js versions with:
 ```
-nvm install 4
-nvm use 4
-```
-
-If you're using Node.js 4 or earlier versions, it's recommended that you upgrade npm to the latest version. To upgrade, run:
-```
-npm install npm@latest -g
+nvm install 8
+nvm use 8
 ```
 
 ### Installation
@@ -72,12 +68,12 @@ Run `npm install -g cncjs@latest` to install the latest version. To determine th
 
 ### Usage
 
-Run `cnc` to start the server, and visit `http://yourhostname:8000/` to view the web interface. Pass `--help` to `cnc` for more options.
+Run `cncjs` to start the server, and visit `http://yourhostname:8000/` to view the web interface. Pass `--help` to `cnc` for more options.
 
 ```
-pi@rpi3$ cnc -h
+pi@rpi3$ cncjs -h
 
-  Usage: cnc [options]
+  Usage: cncjs [options]
   
   Options:
 
@@ -96,12 +92,12 @@ pi@rpi3$ cnc -h
 
   Examples:
 
-    $ cnc -vv
-    $ cnc --mount /pendant:/home/pi/tinyweb
-    $ cnc --watch-directory /home/pi/watch
-    $ cnc --access-token-lifetime 60d  # e.g. 3600, 30m, 12h, 30d
-    $ cnc --allow-remote-access
-    $ cnc --controller Grbl
+    $ cncjs -vv
+    $ cncjs --mount /pendant:/home/pi/tinyweb
+    $ cncjs --watch-directory /home/pi/watch
+    $ cncjs --access-token-lifetime 60d  # e.g. 3600, 30m, 12h, 30d
+    $ cncjs --allow-remote-access
+    $ cncjs --controller Grbl
 ```
 
 Instead of passing command line options for `--watch-directory`, `--access-token-lifetime`, and `--allow-remote-access`, you can create a `~/.cncrc` file that contains the following configuration in JSON format:
@@ -116,7 +112,7 @@ Instead of passing command line options for `--watch-directory`, `--access-token
 
 To troubleshoot issues, run:
 ```
-cnc -vvv
+cncjs -vvv
 ```
 
 ### Configuration File
@@ -155,11 +151,11 @@ Check out an example configuration file [here](https://github.com/cncjs/cncjs/bl
   "commands": [
     {
       "title": "Update (root user)",
-      "commands": "sudo npm install -g cncjs@latest --unsafe-perm; pkill -a -f cnc"
+      "commands": "sudo npm install -g cncjs@latest --unsafe-perm; pkill -a -f cncjs"
     },
     {
       "title": "Update (non-root user)",
-      "commands": "npm install -g cncjs@latest; pkill -a -f cnc"
+      "commands": "npm install -g cncjs@latest; pkill -a -f cncjs"
     },
     {
       "title": "Reboot",
@@ -180,14 +176,14 @@ Check out an example configuration file [here](https://github.com/cncjs/cncjs/bl
 
 ## Git Installation
 
-If you prefer to use Git instead of `npm install`, You can create a local clone of the repository on your computer and sync from GitHub. Type the following commands to install and run `cnc`:
+If you prefer to use Git instead of `npm install`, You can create a local clone of the repository on your computer and sync from GitHub. Type the following commands to install and run `cncjs`:
 ```
 git clone https://github.com/cncjs/cncjs.git
-cd cnc
+cd cncjs
 git checkout master
 npm install
 npm run prepublish
-./bin/cnc
+./bin/cncjs
 ```
 
 To update your local copy with latest changes, use:
@@ -196,7 +192,7 @@ git checkout master
 git pull origin master
 npm install
 npm run prepublish
-./bin/cnc
+./bin/cncjs
 ```
 
 This is the fastest method to bring your local copy up-to-date.
@@ -207,7 +203,7 @@ This is the fastest method to bring your local copy up-to-date.
 
 Alternatively, you can install and run a Docker image within a Docker container. The first installation may take a long time to complete, but further updates will be much faster.
 
-To install and set up cnc, take the following steps:
+To install and set up cncjs, take the following steps:
 
 <b>Step 1:</b> Enter the following command to retrieve the latest version of the image:
 ```
@@ -216,7 +212,7 @@ docker pull cncjs/cncjs:latest
 
 <b>Step 2:</b> Use the `docker run` command to create the Docker container and run the server, like so:
 ```
-docker run --privileged -p 8000:8000 --rm --name cnc cncjs/cncjs:latest
+docker run --privileged -p 8000:8000 --rm --name cncjs cncjs/cncjs:latest
 ```
 By default a container is not allowed to access any devices, but a "privileged" container is given access to all devices on the host.
 
@@ -230,8 +226,8 @@ https://hub.docker.com/r/cncjs/cncjs/tags/
 
 If you run into issues and need to restart the Docker container, use the following commands to first stop the Docker application, and then start it up again:
 ```
-docker stop cnc
-docker start cnc 
+docker stop cncjs
+docker start cncjs 
 ```
 
 To view a list of all containers that are currently running in your Docker environment, use:
@@ -256,5 +252,5 @@ docker rmi IMAGE_ID
 
 To view the container in your terminal, use:
 ```
-docker attach cnc
+docker attach cncjs
 ```
