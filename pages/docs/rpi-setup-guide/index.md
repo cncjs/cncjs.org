@@ -553,7 +553,8 @@ sudo -i
 
 # INSTALL H264 SUPPORT
 cd /usr/src
-git clone git://git.videolan.org/x264
+git clone https://code.videolan.org/videolan/x264.git
+~~git clone git://git.videolan.org/x264~~
 cd x264
 ./configure --host=arm-unknown-linux-gnueabi --enable-static --disable-opencl
 make
