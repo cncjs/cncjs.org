@@ -98,7 +98,7 @@ pm2 startup  # To start PM2 as pi / current user
   sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u pi --hp /home/pi
 
 # Start CNCjs (on port 8000, /w Tinyweb mount point) with PM2
-pm2 start $(which cncjs) -- --port 8000 -m /tinyweb:/home/pi/tinyweb
+pm2 start $(which cncjs) -- --port 8000 -m /tinyweb:/home/pi/tinyweb/src
 
 # Set current running apps to startup
 pm2 save
@@ -305,13 +305,13 @@ rm -r cncjs-pendant-tinyweb*.zip
 # Move / Rename Tinyweb Directory
 mv /home/pi/cncjs-pendant-tinyweb* /home/pi/tinyweb
 
-# How-to Start CNCjs w/ mounted TinyWeb
-cncjs -m /tinyweb:/home/pi/tinyweb
+# How-to Start CNCjs w/ the tiny web interface mounted at /tinyweb
+cncjs -m /tinyweb:/home/pi/tinyweb/src
 
 # Start CNCjs (on port 8000, /w Tinyweb) with PM2
 pm2 stop cncjs  # stop pervious instance
 pm2 delete cncjs  # delete pervious instance
-pm2 start $(which cncjs) -- --port 8000 -m /tinyweb:/home/pi/tinyweb
+pm2 start $(which cncjs) -- --port 8000 -m /tinyweb:/home/pi/tinyweb/src
 pm2 save # Set current running apps to startup
 ```
 
