@@ -58,7 +58,7 @@ sudo apt-get install htop iotop nmon lsof screen -y
 ### [Install Node.js via Package Manager](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
 ```
 # Install Node.js via Package Manager & Add Package Source
-curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -  # Install NodeJS v7
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -  # Install NodeJS v12
 sudo apt-get install -y nodejs  # npm nodejs-legacy #(Installed with nodesource)
 ```
 
