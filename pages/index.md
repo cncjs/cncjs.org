@@ -51,18 +51,17 @@ A web-based interface for CNC milling controller running [Grbl](https://github.c
 
  Version | Supported Level
 :------- |:---------------
- <=0.12  | Unsupported
- 4       | <b>Recommended for production use</b>
- 5       | Supported
- 6       | <b>Recommended for production use</b>
- 7       | Supported
- 8       | Unsupported<br>Note: Will be supported in CNCjs 2.0
+ 4       | Dropped support
+ 6       | Supported
+ 8       | Supported
+ 10      | Recommended
+ 12      | Recommended
 
 ## Getting Started
 
 ### Node.js Installation
 
-Node.js 4 or higher is recommended. You can install [Node Version Manager](https://github.com/creationix/nvm) to manage multiple Node.js versions. If you have `git` installed, just clone the `nvm` repo, and check out the latest version:
+Node.js 8 or higher is recommended. You can install [Node Version Manager](https://github.com/creationix/nvm) to manage multiple Node.js versions. If you have `git` installed, just clone the `nvm` repo, and check out the latest version:
 ```
 git clone https://github.com/creationix/nvm.git ~/.nvm
 cd ~/.nvm
@@ -79,11 +78,11 @@ export NVM_DIR="$HOME/.nvm"
 
 Once installed, you can select Node.js versions with:
 ```
-nvm install 4
-nvm use 4
+nvm install 10
+nvm use 10
 ```
 
-If you're using Node.js 4 or earlier versions, it's recommended that you upgrade npm to the latest version. To upgrade, run:
+It's also recommended that you upgrade npm to the latest version. To upgrade, run:
 ```
 npm install npm@latest -g
 ```
