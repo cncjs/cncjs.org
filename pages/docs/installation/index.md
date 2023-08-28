@@ -4,6 +4,7 @@ contributors:
   - cheton
   - AustinSaintAubin
   - MitchBradley
+  - thijstriemstra
 ---
 
 ## index
@@ -58,7 +59,7 @@ If you're going to use sudo or root to install cncjs, you need to specify the `-
 sudo npm install --unsafe-perm -g cncjs
 ```
 
-It's recommended that you run [Raspbian Jessie](https://www.raspberrypi.org/downloads/raspbian/) on the RPi2 or RPi3. For Raspbian Wheezy, be sure to [install gcc/g++ 4.8](https://somewideopenspace.wordpress.com/2014/02/28/gcc-4-8-on-raspberry-pi-wheezy/) before npm install.
+It's recommended that you run the [RaspberryPi OS](https://www.raspberrypi.com/software/operating-systems/).
 
 Check out [https://cnc.js.org/docs/installation/](https://cnc.js.org/docs/installation/) for other installation methods.
 
