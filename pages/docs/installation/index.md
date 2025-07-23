@@ -13,6 +13,10 @@ contributors:
 * [Git Installation](#git-installation)
 * [Docker Images](#docker-images)
 
+For a great walk through oh how to do this
+
+https://www.youtube.com/watch?v=AZdw8djAeMc&t=255s
+
 ---
 
 ## Raspberry Pi Setup Guide
