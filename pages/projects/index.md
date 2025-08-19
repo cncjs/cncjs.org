@@ -9,6 +9,7 @@ https://github.com/cncjs/cncjs
 * [cncjs-pendant-ps3](https://github.com/cncjs/cncjs-pendant-ps3) - Dual Shock / PS3 Bluetooth Remote Pendant for CNCjs
 * [cncjs-pendant-tinyweb](https://github.com/cncjs/cncjs-pendant-tinyweb) - A tiny web console for small 320x240 LCD display
 * [cncjs-pendant-keyboard](https://github.com/cncjs/cncjs-pendant-keyboard) - A simple pendant (using wireless keyboard or usb) to CNCjs
+* [cncjs-pendant-streamdeck](https://github.com/Billiam/cncjs-pendant-streamdeck) - A configurable stream deck and mobile web pendant for CNCjs
 
 ### G-code
 
