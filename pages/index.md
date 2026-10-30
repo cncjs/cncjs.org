@@ -40,6 +40,7 @@ A web-based interface for CNC milling controller running [Grbl](https://github.c
 * [cncjs-pendant-ps3](https://github.com/cncjs/cncjs-pendant-ps3)
 * [cncjs-pendant-tinyweb](https://github.com/cncjs/cncjs-pendant-tinyweb)
 * [cncjs-pendant-keyboard](https://github.com/cncjs/cncjs-pendant-keyboard)
+* [cncjs-pendant-whb04b-6](https://github.com/pedropaulovc/cncjs-pendant-whb04b-6) (WebHID; Grbl; Chrome or Edge)
 
 ## Browser Support
 
